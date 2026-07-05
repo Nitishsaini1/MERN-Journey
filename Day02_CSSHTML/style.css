@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+}
+.header{
+    display: flex;
+    border: 2px black solid;
+    padding: 2px ;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav a{
+   padding: 3px;    
+}
+#logo{
+    color:purple;
+}
+nav a {
+    color: red;
+}
+.title{
+    color: blue;
+    margin: 10px;
+}
+.description{
+    color: gray;
+}
+.contact-btn{
+    background-color:black;
+    color: white; 
+    padding: 10px ;
+     width: 100px;
+    border: 2px solid red;
+    
+}
+.container{
+    display: flex;
+    border: 2px solid black;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+ 
+ 
+}
+.box{
+      margin: 10px;
+    padding: 10px;
+    color: red;
+    border: 2px solid blue;
+}
+ .parent-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 5px solid blue;
+    margin: 10px;
+ }
+ .container-01 {
+    display: flex;
+ }
+ .container-02{
+    display: flex;
+ }
+ .parent{
+    display: flex;
+    justify-content: space-between;
+ }
+ .left{
+    display: flex;
+ }
+ .right{
+    display: flex;
+    width: 400px;
+    border: 2px solid red;
+    justify-content: space-around; /*here why i am unable to use this */
+ }
+ .right img{
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+ }
+ .right p{
+    font-size: 30px;
+    font-style: italic;
+    
+ }
+/*Does it change the content?
+Does it change the space inside?
+Does it change the space outside?
+Does it change the border?
+
+You wrote code.
+You observed something unexpected.
+You asked why.
+You experimented.
+Now you understand the concept.
+
+who is the parent 
+what are the direct children
+is hte correct parent the flex container
+does the container have enough space for the property to distribute
+
+
+class is usually used change the style of different element without 
+touching  other element and ID usually used to style a single unique element on a page 
+we use * to select every possible element on the page without expecidetly touching them 
+nav a means a is the descendant of the nav and when apply color it wiil only target the element who has nav and isnide it contain the a tag 
+we use group selector to select various tags without giving them class 
+id has highest priority
+justify content - center / space between / space around
+
+
+*/
+
+button{
+    width: 400px;
+    height: 80px;
+
+}

@@ -1,0 +1,101 @@
+/*universal selector*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial,sans-serif;
+    background: #f4f4f4;
+}
+
+/*header*/
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: white;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+/*hero section*/
+
+.hero{
+    text-align: center;
+    padding: 80px 20px;
+
+}
+.hero h2{
+    font-size: 48px;
+}
+.hero p {
+    margin-top: 15px;
+    color: #555;
+    font-size: 18px;
+}
+button{
+    border: 4px silver solid;
+    background: black;
+    color: white;
+    padding: 12px 24px;
+    margin: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}   
+button:hover{
+    background-color: blue;
+    transform: scale(1.1);
+}
+/*skill section*/
+.skill h3{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.skills{
+    display: flex;
+    margin  : 20px;
+    list-style : none;
+    justify-content: space-evenly;
+
+}
+ /* projects section*/
+ .project-card {
+    text-align: center;
+    width: 200px;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    transition: 0.3s;
+ }
+.project-card:hover{    
+    background-color: khaki;
+    transform: scale(1.1);
+    border: 3px solid black;
+}
+
+ /*contact section*/
+ .contact p{
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
+ }
+
+
+footer{
+    text-align: center;
+}
