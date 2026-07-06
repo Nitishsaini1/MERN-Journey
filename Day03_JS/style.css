@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+.user-name{
+    display: block;
+    margin-top: 20px; /* can you tell why this margin here not working*/
+    padding: 12px;
+    font-size: 22px;
+} 
+.name-input, .age-input{
+    border: 2px solid navajowhite;
+    margin: 15px;
+    padding: 12px;
+}
+.submit-btn, .submit-btn2{
+    border: 2px solid navajowhite;
+    margin: -10px 16px 20px 16px;
+    padding: 12px;
+}
+
+.response, .age-response{
+    padding: 12px;
+    font-size: 15px;
+    color: black;    
+}
+.counter-app{
+    display: flex;
+    justify-content: center;
+}
+.result, .minus-one, .plus-one{
+    border: 2px solid black;
+    width: 30px ;
+    height: 30px;
+    padding-top: 4px;
+    margin: 20px;
+}
+ .minus-one, .plus-one{
+    padding-bottom: 5px;
+ }
