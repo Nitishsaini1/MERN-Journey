@@ -1,52 +1,43 @@
-const userName = document.querySelector(".username")
-const password = document.querySelector(".password")
-const button = document.querySelector(".signin")
-const response = document.querySelector(".response")
-
+const username = document.querySelector(".username");
+const password = document.querySelector(".password");
+const button = document.querySelector(".login");
+const response = document.querySelector(".response");
 
 button.addEventListener("click" , function(){
-    //console.log("["+userName.value+"]")
-    //conditon 1
-   if(userName.value == ""){
-    response.textContent = "Please Enter a username it cant be empty";
-    userName.value = "";
-   }else{
-       //condition 2
-           if(userName.value.length < 5 || userName.value.length > 10  ){
-    response.textContent = "Please Enter a valid username its either short or long";
-    userName.value = "";
-}else{
-    //condition 3
-    if(userName.value.includes (" ")){
-        response.textContent = "Please Enter a valid username you have a space";
-    }else{
-        //condition 4
-        if(password.value == ""){
-            //console.log("["+password.value+"]")
-            response.textContent = "Please Enter a password it cant be empty";
-            password.value = "";
-   }else{
-     
-       //condition 5
-     if(password.value.length < 10 || password.value.length > 20  ){
-    response.textContent = "Please Enter a valid password its either short or long";
-    password.value = "";
-}else{
-    //condition 6
-                      if(password.value.includes (" ")){
-        response.textContent = "Please Enter a valid password  you have a space";
-    }else{
-        response.textContent = "Welcome";
-
-
-    }
-
-
+        console.log("Button clicked");
+        if (username.value == "") {
+            console.log("Button clicked 2");
+            response.textContent = "Please Enter a user name";
+                 username.value = "";                
+                } else {
+                 console.log("Button clicked 3");
+                            if (username.value.length < 5 || username.value.length > 10) {
+                                response.textContent = "Please Enter a user name who is between 5 and 10";
+                                username.value = "";                                
+                            } else {
+                                if (username.value.includes(" ")) {
+                                    response.textContent = "Please Enter a User name who don't have space"
+                                } else {
+                                    if (password.value == "") {
+                                        response.textContent = "Please Enter a Password";
+                                        password.value = "";                                        
+                                    } else { 
+                                        if (password.value.length < 10 || password.value.length > 20) {
+                                             response.textContent = "Please Enter a Password who is between 10 and 20";
+                                             password.value = "";
+                                        } else {
+                                            if (password.value.includes(" ")) {
+                                                response.textContent = "Please Enter a Password who dont have space";                                                
+                                            } else {
+                                                response.textContent = "Welcome-"
+                                            }
+                                            
+                                        }                                        
                                     }
-                                }
+                                    
+                                }                                
                             }
-                        }
-                    }
-                }
-            
-        )
+                
+             }
+
+});
