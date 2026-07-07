@@ -147,3 +147,10 @@ SYMBOL     READ IT AS          EXAMPLE
             
 
 
+******
+
+user enter naem and password 
+browser first read name
+then is it empty  
+  yes                          no 
+  please enter a name          move to next question i,e. 
