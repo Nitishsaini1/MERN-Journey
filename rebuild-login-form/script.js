@@ -41,3 +41,20 @@ button.addEventListener("click" , function(){
              }
 
 });
+
+
+
+const name = document.querySelector(".name");
+const greetMe = document.querySelector(".button-greet");
+const response2 = document.querySelector(".response-greet");
+
+
+greetMe.addEventListener("click" , function(){
+           if (name.value == "") {
+            response2.textContent = "Please Enter a Valid name";
+            name.value = "";            
+           } else {response2.textContent = "Hello " + name.value;
+            
+           }
+
+})

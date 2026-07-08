@@ -10,3 +10,20 @@ there a number of question browser will ask
 2. is it valid
 3. is it matching with db
 
+
+Let's label the code:
+let age = 24;
+let → Variable keyword
+age → Variable name
+= → Assignment operator
+24 → Value
+
+Earlier we learned:
+function add(a, b) {
+}
+function → Function keyword
+add → Function name
+Now:
+let age = 24;
+let → Variable keyword
+age → Variable name
