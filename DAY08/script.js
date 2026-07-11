@@ -9,11 +9,34 @@ const studentNameAdd = document.querySelector(".success");
 
 let students = ["Raj", "Aman", "Kirti"];
 resultStundent.textContent = students.join(" | ");
+
+
 function addStudent() {
   if (studentName.value == "") {
     result.textContent = "Please Enter a Name";
+  } else if (students.includes(studentName.value) ) {
+     result.textContent = "❌ Student already exists.";
+  } else  if (studentName.value.includes(" ")) {
+                result.textContent = "❌ cannot enter empty names";
   } else {
     students.push(studentName.value);
+    studentNameAdd.textContent =
+      "✅ Student '" + studentName.value + "' added successfully.";
+    resultStundent.textContent = students.join(" | ");
+    studentName.value = "";
+     result.textContent = "";
+  }
+}
+
+function addFront() {
+  if (studentName.value == "") {
+    result.textContent = "Please Enter a name";
+  } else if (students.includes(studentName.value) ) {
+     result.textContent = "❌ Student already exists.";
+  } else   if (studentName.value.includes(" ")) {
+                result.textContent = "❌ cannot enter empty names";
+  } else {
+    students.unshift(studentName.value);
     studentNameAdd.textContent =
       "✅ Student '" + studentName.value + "' added successfully.";
     resultStundent.textContent = students.join(" | ");
@@ -25,29 +48,24 @@ function remove() {
   if (students.length == 0) {
     resultStundent.textContent = "No name to erase";
   } else {
-    students.pop();
+  let remove =   students.pop();
     resultStundent.textContent = students.join(" | ");
+    studentNameAdd.textContent =
+      "✅ Removed '" + remove + "' successfully.";
+   
   }
 }
 
-function addFront() {
-  if (studentName.value == "") {
-    result.textContent = "Please Enter a name";
-  } else {
-    students.unshift(studentName.value);
-    studentNameAdd.textContent =
-      "✅ Student '" + studentName.value + "' added successfully.";
-    resultStundent.textContent = students.join(" | ");
-    studentName.value = "";
-     result.textContent = "";
-  }
-}
+
 function removeFront() {
   if (students.length == 0) {
     resultStundent.textContent = "No name to erase";
   } else {
-    students.shift();
+    let remove = students.shift();
     resultStundent.textContent = students.join(" | ");
+    
+    studentNameAdd.textContent =
+      "✅ Removed '" + remove + "' successfully.";
   }
 }
 
