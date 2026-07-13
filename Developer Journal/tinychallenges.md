@@ -154,3 +154,297 @@ browser first read name
 then is it empty  
   yes                          no 
   please enter a name          move to next question i,e. 
+
+
+
+Question 4 — Reading Before Creating the Object
+
+let movieName = "Interstellar";
+let rating = 9.5;
+
+let movie = {
+    title: movieName,
+    rating: rating
+};
+
+console.log(movie.title);
+ it first store both title and rating and their respective values 
+ now it will store movie and title and rating inside and then it will go to movieName and then bring its value to title and same for rating 
+ it now read console and then will to go movie variable find title and bring the value of title
+
+---
+
+Question 5 — Updating a Property
+
+let movie = {
+    title: "Interstellar",
+    rating: 9.5,
+    year: 2014,
+    watch: false
+};
+
+movie.watch = true;
+
+console.log(movie.watch);  
+it will store the movie and title,rating,year and watch with their respective value 
+it will reach movie.watch = true; means
+go to movie variable and go inside the watch and then replace the false with true 
+ and then print the movie.watch as true 
+
+
+---
+
+Question 6 — Creating a Movie (Exactly Like Your Project)
+
+let title = "The Batman";
+let rating = 8;
+let year = 2022;
+let watch = true;
+
+let movie = {
+    title: title,
+    rating: rating,
+    year: year,
+    watch: watch
+};
+
+console.log(movie.year);
+
+Focus on:Data flow.Values moving into the object.Why the object exists.
+it now store the title,rating,year and watch 
+then it will store the movie and then evaluate the object and then will bring the value of variable to their rexpective variable 
+then it will print the movie.year 
+
+---
+
+Question 7 — First Step Toward the Movie Library
+
+let movies = [];
+
+let movie = {
+    title: "Interstellar",
+    rating: 9.5
+};
+
+No more code.
+
+I want you to answer only this question:
+
+After these two lines execute, what does memory look like?
+
+Draw it exactly like you've been drawing memory.
+
+Don't worry about adding the movie to the array yet.-->  okay if i dont need to worry about these 
+
+movies
+      |
+
+
+movie
+      |
+      |---title:"Interstaller",
+      |---rating:9.5;
+
+--- 
+
+
+
+
+//************************
+I love this idea.
+
+This will teach you debugging much faster than me fixing your code.
+
+Here are **5 debugging challenges**. They get slightly harder each time.
+
+**Rule:** Don't run them immediately. First predict:
+
+1. Browser thinking
+2. Memory
+3. Bug
+4. Fix
+
+---
+
+# 🐞 Bug 1 — Object Property
+
+```javascript
+let movie = {
+    title: "Interstellar",
+    rating: 9.5
+};
+
+console.log(movie.name);
+```
+
+Questions:
+
+* What prints?
+refrence error
+* Why?
+because when js would go to variable movie and will see for name it wont find a value with that name
+* How would you fix it?
+let movie = {
+    title: "Interstellar",
+    rating: 9.5
+};
+
+console.log(movie.title);
+
+---
+
+# 🐞 Bug 2 — Array vs Object
+
+```javascript
+let movie = {
+    title: "Interstellar",
+    rating: 9.5
+};
+
+for (let i = 0; i < movie.length; i++) {
+    console.log(movie.title);
+}
+```
+
+Questions:
+
+* Does the loop run?
+no
+* Why?
+ this will not run as we're running a loop on object as loop work well with array
+* What is JavaScript thinking?
+1st it will store the movie variable and title and rating inside it 
+2nd it will try to run the loop  but as soon it reach movie.length it will see that movie is a object who doesnt have index to it 
+
+
+---
+
+# 🐞 Bug 3 — Push
+
+```javascript
+let movies = [];
+
+let movie = {
+    title: "Interstellar"
+};
+
+movies.push();
+
+console.log(movies.length);
+```
+
+Questions:
+
+* What is the length? 
+its length is 0 because there is only empty string nothing else.
+* Why?
+
+* What should be inside `push()`?
+movie
+after this length will be 1
+
+
+---
+
+# 🐞 Bug 4 — Display
+
+```javascript
+let movies = [
+    {
+        title: "Interstellar"
+    }
+];
+
+for (let i = 0; i < movies.length; i++) {
+    console.log(movies.title);
+}
+```
+
+Questions:
+
+* Why doesn't this work?
+because there is no [i] in movies.title
+* Which step in Browser Thinking fails?
+it failes to get the index of movies
+
+---
+
+# 🐞 Bug 5 — Validation
+
+```javascript
+let movieName = "      ";
+
+if (movieName == "") {
+    console.log("Invalid");
+} else {
+    console.log("Valid");
+}
+```
+
+Questions:
+
+* What prints?
+valid
+* Why?
+bcuz  this "      " and "" are tho different things
+* How would you make the validation behave the way you wanted in your Movie Library?
+
+```javascript
+let movieName = "      ";
+
+if (movieName.trim() == "")
+//why use == "" here?
+{
+    console.log("Invalid");
+} else if (movieName == "") {
+    console.log("Invalid");
+} else {
+    console.log("Valid");
+}
+```
+---
+
+## ⭐ Bonus Challenge (Closest to your project)
+before
+```javascript
+let movies = [];
+
+let movie = {
+    title: "Interstellar"
+};
+
+movies.push(movie);
+
+for (let i = 0; i < movies.length; i++) {
+    console.log(movies.title);
+}
+```
+after
+```javascript
+let movies = [];
+
+let movie = {
+    title: "Interstellar"
+};
+
+movies.push(movie);
+
+for (let i = 0; i < movies.length; i++) {
+    console.log(movies[i].title);
+}
+```
+
+This one is almost exactly the mistake people make in Movie Library projects.
+
+--- 
+
+Today you asked:
+"How do you recognize bugs?"
+Whenever you're stuck, don't immediately search for the answer.
+Ask yourself these five questions:
+What is in memory right now?
+What line is JavaScript executing?
+What does this expression evaluate to?
+Does this line read memory or change memory?
+What should memory and the screen look like after this line?
+If you make those five questions a habit, you'll become much better at debugging.

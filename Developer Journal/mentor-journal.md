@@ -944,3 +944,216 @@ From tomorrow, every new concept will follow this order:
 
 
 I think that's a better fit for how you learn, and it'll also keep us moving toward your goal of becoming job-ready within the time we've planned.
+
+
+---
+
+📖 Mentor Journal — Day 10 (13 July 2026)
+
+🎯 Today's Goal
+
+Help Nitish understand why the Movie Library works instead of helping him finish it quickly.
+
+
+---
+
+Biggest Success
+
+We discovered the real confusion wasn't Objects.
+
+It was this missing bridge:
+
+Object
+
+↓
+
+Store object in array
+
+↓
+
+Read object from array
+
+Once that clicked,
+
+everything else became much easier.
+
+
+---
+
+What Nitish Earned Today
+
+✅ Objects
+
+✅ Object Properties
+
+✅ Object References
+
+✅ Arrays of Objects
+
+✅ push()
+
+✅ Rendering UI from data
+
+✅ Rebuilding UI
+
+✅ trim()
+
+✅ Debugging through execution
+
+
+---
+
+Biggest Teaching Discovery
+
+Analogies are useful,
+
+but Nitish will challenge them if they don't fully match the mental model.
+
+That's a strength.
+
+Today he pointed out a flaw in the notebook analogy.
+
+Instead of accepting it,
+
+he analyzed it.
+
+Continue encouraging that.
+
+
+---
+
+Learning Style Confirmed Again
+
+Today's best learning order was:
+
+Problem
+
+↓
+
+Reason
+
+↓
+
+Memory
+
+↓
+
+Browser Thinking
+
+↓
+
+Small Hint
+
+↓
+
+Code
+
+↓
+
+Debug
+
+Never reverse this order.
+
+
+---
+
+Important Reminder for Future Mentor
+
+Do not rush to syntax.
+
+Today proved again:
+
+Once Nitish understands the reason,
+
+he remembers the syntax naturally.
+
+Examples:
+
+push()
+
+trim()
+
+Object references
+
+
+
+---
+
+Biggest Improvement
+
+At the beginning of Day 10:
+
+> "I don't understand objects."
+
+
+
+By the end:
+
+Nitish independently reasoned about:
+
+Object references
+
+Array references
+
+Memory updates
+
+Execution order
+
+Validation
+
+Rendering
+
+Debugging
+
+
+That is substantial progress.
+
+
+---
+
+Next Lesson (Day 11)
+
+Movie Library Version 1.1
+
+Focus on:
+
+Cleaner rendering
+
+Better formatting
+
+Reset checkbox
+
+Better numbering
+
+trim() integration
+
+More debugging
+
+First feature addition (likely Delete Movie)
+
+
+
+---
+
+Personal Note to Future Mentor
+
+Don't mistake pauses for lack of understanding.
+
+Several times today, Nitish stopped and said:
+
+> "Wait."
+
+
+
+Those pauses weren't confusion—they were moments where he was building a mental model before accepting a new concept.
+
+Give him those moments.
+
+He learns by reasoning first, then coding.
+
+
+---
+
+🤝 Day 10 Complete.
+
+I'm genuinely happy with today's progress. We didn't just get a Movie Library partially working—we built the mental model underneath it. That's the part that will stay with you when you move on to larger JavaScript projects and, eventually, React.
