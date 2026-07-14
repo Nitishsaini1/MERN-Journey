@@ -20,10 +20,12 @@ function folderMovie() {
     warning.textContent =
       "Please Enter the movie name."; 
     movieName.value = "";
-  } else  if (movieName.value == "") {
-    warning.textContent = "Please enter a name.";
+  } else  
+  // if (movieName.value == "") {
+    // warning.textContent = "Please enter a name.";
     // warning.textContent = "";
-  } else if (rating.value == "") {
+  // } else
+   if (rating.value == "") {
     warning.textContent = "Please enter the rating";
   } else if (rating.value <= 0 || rating.value > 10) {
     warning.textContent = "Please enter the rating from 0 to 10";
@@ -39,20 +41,24 @@ function folderMovie() {
     displayMovie.innerHTML = "";
     for (let i = 0; i < movies.length; i++) {
       displayMovie.innerHTML =
-        displayMovie.innerHTML + "<br>" + (i + 1) + "." + movies[i].title;
+        displayMovie.innerHTML + 
+        "<br>" + (i + 1) + "." + movies[i].title;
       displayMovie.innerHTML =
-        displayMovie.innerHTML + "<br>" + movies[i].rating;
+        displayMovie.innerHTML +
+         "<br>" + movies[i].rating;
       displayMovie.innerHTML = 
-        displayMovie.innerHTML + "<br>" + movies[i].year;
+        displayMovie.innerHTML + 
+        "<br>" + movies[i].year;
       displayMovie.innerHTML =
-        displayMovie.innerHTML + "<br>" + movies[i].watch;
+        displayMovie.innerHTML +
+         "<br>" + movies[i].watch;
     }
 
     movieName.value = "";
     rating.value = "";
     movieYear.value = "";
     warning.textContent = "";
-    watch.checked = true;
+    movieWatch.checked = false;
     // movie =""
     // i don't how will this get reset
   }
