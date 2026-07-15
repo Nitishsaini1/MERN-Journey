@@ -1786,3 +1786,373 @@ Day 11 Verdict
 This was one of the strongest learning days so far.
 
 Not because the most code was written, but because the way the user thinks about programming became noticeably more structured. That change is likely to make future projects significantly smoother than the first.
+
+You earned today's rest. This was a long session, and more importantly, you reasoned through the difficult parts instead of rushing to finish the project.
+
+
+---
+
+Git Commit
+
+Day 12: Implement Complete/Delete logic and learn array splice
+
+or a little more descriptive:
+
+feat: implement todo complete feature and begin delete functionality
+
+
+---
+
+📖 Mentor Journal — Day 12 (15 July 2026)
+
+🎯 Today's Goal
+
+Continue building the To-Do List from scratch while strengthening JavaScript problem-solving and browser thinking.
+
+
+---
+
+✅ Project Progress
+
+To-Do List v1
+
+Completed:
+
+Add Task
+
+Input Validation
+
+Store Tasks as Objects
+
+Store Objects in Array
+
+Render Tasks
+
+Complete Button
+
+Dynamic Buttons with Index
+
+Delete Button Logic
+
+Array Deletion using splice()
+
+
+Remaining:
+
+Finish Delete UI refresh
+
+Refactor rendering into its own function
+
+(Future) Edit Task
+
+(Future) Filter Tasks
+
+
+
+---
+
+🧠 Biggest Concepts Learned
+
+Function Parameters
+
+Understood that:
+
+completeTask(index)
+
+does not receive the variable i.
+
+It receives the value that the button passes.
+
+Example:
+
+i = 2
+
+↓
+
+Button stores 2
+
+↓
+
+completeTask(2)
+
+↓
+
+index = 2
+
+This became one of today's biggest breakthroughs.
+
+
+---
+
+Variable Scope
+
+Discovered why
+
+database[i]
+
+failed.
+
+Reason:
+
+i belongs only to the for loop.
+
+index belongs to completeTask().
+
+Different functions have different local variables.
+
+
+---
+
+Arrays vs Objects
+
+Another major realization.
+
+Understood:
+
+database
+
+is the array.
+
+database[index]
+
+is one object inside the array.
+
+Therefore:
+
+database.push(...)
+
+and
+
+database.splice(...)
+
+belong to the array,
+
+while
+
+database[index].status
+
+belongs to the object.
+
+
+---
+
+splice()
+
+Instead of memorizing syntax,
+
+Nitish first discovered the problem.
+
+Need:
+
+> Remove one object from the middle of the array.
+
+
+
+Then learned:
+
+splice(startIndex, deleteCount)
+
+Mental model:
+
+First number = Where to start.
+
+Second number = How many objects to remove.
+
+
+Immediately understood examples like:
+
+splice(2,2)
+
+without memorizing.
+
+
+---
+
+Browser Thinking
+
+Today's strongest realization:
+
+Changing memory does not automatically update the webpage.
+
+Correct flow:
+
+User clicks
+
+↓
+
+Memory changes
+
+↓
+
+Clear UI
+
+↓
+
+Read every object
+
+↓
+
+Render again
+
+↓
+
+Browser updates
+
+This pattern now applies to:
+
+Add
+
+Complete
+
+Delete
+
+
+
+---
+
+💡 Biggest "Aha!" Moments
+
+1. Buttons carry identity through the index.
+
+
+2. Functions receive values, not variables.
+
+
+3. Arrays own methods like push() and splice().
+
+
+4. Objects own properties like title and status.
+
+
+5. UI is rebuilt from memory—not magically updated.
+
+
+
+
+---
+
+🐞 Bugs Solved Today
+
+i is not defined
+
+database is not a function
+
+deleteTask is not defined
+
+database[index].splice is not a function
+
+
+Every bug was solved by understanding the execution instead of randomly changing code.
+
+
+---
+
+📈 Mentor Observations
+
+Today showed a major shift in Nitish's thinking.
+
+Instead of asking:
+
+> "What's the syntax?"
+
+
+
+he repeatedly asked:
+
+"Why does the browser know the index?"
+
+"Why is index available but i isn't?"
+
+"Why didn't the UI update?"
+
+"Who owns splice()?"
+
+
+These are execution and architecture questions rather than syntax questions.
+
+This is a significant improvement from the first week.
+
+
+---
+
+❤️ Personal Reflection
+
+Today, Nitish said something that stood out:
+
+> "I thought before answering you. I didn't want to just guess."
+
+
+
+That sentence captures today's progress better than any completed feature.
+
+The goal is no longer to write code quickly.
+
+The goal is to understand why the code works.
+
+
+---
+
+🎯 Mission for Day 13
+
+Finish Delete feature completely.
+
+Refactor rendering into a separate displayTasks() function.
+
+Begin adding another feature to the To-Do List.
+
+Continue thinking in:
+
+Problem
+
+Browser
+
+Memory
+
+Code
+
+
+
+
+---
+
+👨‍💻 Mentor's Feedback
+
+Day 12 wasn't about learning splice().
+
+It was about learning how developers approach problems.
+
+Every new feature followed the same process:
+
+Need
+
+↓
+
+Algorithm
+
+↓
+
+Browser Thinking
+
+↓
+
+Memory
+
+↓
+
+JavaScript
+
+↓
+
+Debugging
+
+Twelve days ago, understanding score = score + 1 took a long time.
+
+Today, you independently reasoned through arrays, function parameters, dynamic buttons, ownership of methods, and rendering.
+
+That's measurable progress.
+
+Sleep well. You earned it.
+
+Tomorrow, we'll finish To-Do List v1 together and move one step closer to your Full Stack interview goal.
+
+🤝 Day 12 Complete.
