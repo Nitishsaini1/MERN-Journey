@@ -37,21 +37,12 @@ function folderMovie() {
     // console.log("Hello");
     // displayMovie.textContent = movie;
     movies.push(movie);
-
     displayMovie.innerHTML = "";
     for (let i = 0; i < movies.length; i++) {
-      displayMovie.innerHTML =
-        displayMovie.innerHTML + 
-        "<br>" + (i + 1) + "." + movies[i].title;
-      displayMovie.innerHTML =
-        displayMovie.innerHTML +
-         "<br>" + movies[i].rating;
-      displayMovie.innerHTML = 
-        displayMovie.innerHTML + 
-        "<br>" + movies[i].year;
-      displayMovie.innerHTML =
-        displayMovie.innerHTML +
-         "<br>" + movies[i].watch;
+      displayMovie.innerHTML = displayMovie.innerHTML +"<br>" + (i + 1) + "." + movies[i].title;
+      displayMovie.innerHTML = displayMovie.innerHTML +"<br>" + movies[i].rating;
+      displayMovie.innerHTML =  displayMovie.innerHTML +"<br>" + movies[i].year;
+      displayMovie.innerHTML = displayMovie.innerHTML +"<br>" + movies[i].watch;
     }
 
     movieName.value = "";
