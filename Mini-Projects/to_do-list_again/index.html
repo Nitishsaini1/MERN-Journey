@@ -22,3 +22,236 @@
     <script src="/Mini-Projects/to_do-list_again/script.js"></script>
 </body>
 </html>
+
+
+ <!-- 
+
+Haha, let's do it. 😄
+
+**Rules:**
+
+* No code editor.
+* No Google.
+* No guessing.
+* Explain your thinking. If you're unsure, say so.
+
+We'll go from easy → medium → difficult.
+
+---
+
+# 🟢 Level 1 – Browser Thinking
+
+### Q1
+
+Imagine this is the beginning of your program.
+
+```javascript
+let database = [];
+let editingIndex = -1;
+```
+
+**Question:**
+
+What exists in **memory** immediately after the browser runs these two lines?
+// nothing will change in memory if there is nothing being pushed in to memory the screen will be as before
+What exists on the **screen**?
+nothing
+---
+
+### Q2
+
+The user types:
+
+```text
+Learn JavaScript
+```
+
+into the input box.
+
+Has **`database` changed yet?**
+
+Why or why not?
+the databse has not been changed yet if the inputvalue is still in is there not in database , as long as no button gets pressed the data willbe store and will not get transferred immediately.
+---
+
+### Q3
+
+The user now clicks **Add**.
+
+Tell me the complete flow.
+
+Start from:
+
+> **User clicks Add**
+
+End at:
+
+> **Browser waits**
+
+Don't write code.
+
+Tell me the browser's story.
+user click add -> browser will read the input -> then it will ask is it empty -> yes ask again or No -> push object into database->updates the memory -> now run renderTask() -> it will now say stop add ill finish that renderTask first -> -> clear display -> it will now run for loop -> and will show title and status and other button  -> and then clear input value -> clear warning -> browser waits 
+---
+
+### Q4
+
+Why doesn't `renderTasks()` add a task to `database`?
+the reason renderTasks() cannot add task is simple bcuz it doesnt has the means to push a object into a database it is only for making sure the display gets render properly
+Why is that important?
+the renderTasks is important initself bcuz this help in showing the uodated memory 
+---
+
+### Q5
+
+Suppose I completely delete this line from **every** function:
+
+```javascript
+renderTasks();
+```
+
+What will happen?
+No nothing big happen just you wont be able to see the tasks being displaying anymore 
+Will the program crash?
+no it will not cuz the add button task is happeing before render you so may be able to add obj into memory but will not be able to show the database onto screen anymore
+Or something else?
+
+Explain why.
+lets how actually render task work it goes like this 
+1st-addtask then renderTasks then you click complete rendertask so its work and show new memory almost same for every button there if we remove the rendertask what will happen just now you can click the add button and then you push object into memory but you wont see anything on screen now at all bcuz memory is being update but the screen is still showing the old screen which was left when render did exist so yes you may change memory but you wont be able to perform any other actions at all like complete delete edit and save
+---
+
+Answer these five first.
+
+Don't rush.
+
+Pretend you're the browser telling me the story. 😄🚀
+
+
+ -->
+
+
+ <!-- 
+ 
+  
+
+---
+
+Question 1
+
+Imagine your database contains:
+
+0 → Learn JS
+
+1 → Learn React
+
+2 → Learn Node
+
+You click Edit on Learn React.
+
+Why do we store
+
+editingIndex = 1;
+
+instead of
+
+database[1].editing = true;
+
+What advantage does editingIndex give us?
+so first of all we know we have already given the editingIndex = -1; because we need to make sure when a index gets select it isnt from 0 to possible number and thats why we need to seprate the editingIndex from the array and when needed we can assign the editingIndex = index that way browser will know to which index it need to and when click on task learn react who has already stored the editTask(1) from there we our 1 like 
+ex for(){
+ .......
+ display.innerHTML= display.innerHTML + ...... editTask(i) >>from here we were able to store index in each of the task like editTask(0),editTask(1),editTask(2);
+}
+
+then we have assign something like this 
+function editTask(index){
+  editingIndex = index;
+}
+
+thats how we're able to get our index for that particular task when needed so that way browser can go to the selective index and can run loop for edit input and we can edit the task and save it 
+
+now lets talk about 
+database[1].editing = true;
+what this actually mean database[1].editing = true; i dont understand because it point to nothing so far we have not seen any variable as editing, lets for argument sake say we have this variable so what does actually this line of code mean, that index 1 of database go inside the editing (ohh is editing like title and status that changes thing a little bit) so it must be like change the value of index 1 to true but it wont help at all. i can't see how more i can go on this. 
+
+---
+
+Question 2
+
+Suppose I remove this line:
+
+displayTask.innerHTML = "";
+
+What happens after adding three tasks?
+without that line of code the loop whenever it run it will loop the display after the available task on screen means something like this 
+0
+0
+1
+0
+1
+2
+0
+1
+2
+3
+this is how the screen will look like these numbers are actuallly the indexes of the database they can be replaced with the actual value
+Describe exactly what the screen will look like.
+
+
+---
+
+Question 3 (This is my favorite)
+
+Imagine renderTasks() never existed.
+
+Could you still build the app?
+
+If yes...
+
+How?
+The renderTasks() only help in make code much reusable and help in making less but if there was never renderTasks() the app could still work but it will just be very long code of line and every task will need to function seprately they wont 
+
+If no...
+
+Why not?
+i dont see why you cannot build the app what actually is renderTasks a function who just clear display and run the for loop and even if without this function we can just write that code but it will take a very long time and will also increase the inconsistency and will also make code very lengthy and thus having a renderTasks is very useful it make sure we can stay consistent make less mistake dont need to make changes in every function and will help in makeing code look much more short and good
+
+---
+
+Don't worry if these take time.
+
+These are the kinds of questions that separate someone who has written the code from someone who understands why the code is structured the way it is. And based on your Level 1 answers, I think you're ready for them. 😄🚀
+
+browser waits 
+↓
+user click edits
+↓
+browser will get the index from here as this was already stored in editTask(i) (this will explain in next steps)
+↓
+browser will now go to that index and will run editTasks(){...}
+↓
+there browser will see that index has been assign to editingIndex and then browser will also store that too 
+↓
+now browser will run rendertasks()
+↓
+now browser will run this funtion and then clear display 
+↓
+then browser will run for loop
+↓
+and will work according to instruction and will see that loop is asking a ifelse to make the decision 
+↓
+now if editingIndex is equal to index browser will run first if and if not the else will run since our index is equal to editingIndex browser wun the first if
+↓
+now browser will show the new display which has input and a save button 
+↓
+browser waits
+↓
+the user will now enter the new task
+↓
+user click save
+↓
+then browser will start again run the save button funciton
+
+
+-->
