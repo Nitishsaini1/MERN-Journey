@@ -16,7 +16,15 @@
             <div class="warning"></div>
         </div>
         <button class="add-task">Add Task</button>
+         <div  style="display:flex;">
+            <div>Tasks : </div>
+            <div class="counter"></div> 
+        </div>
         <div>Display</div>
+        <button class="show-all-task">All Tasks</button>
+         <button class="show-Pending-task">Pending Tasks</button>
+         <button class="show-complete-task">Complete Tasks</button>
+        <!--<button class="pending">Pending</button><button class="complete">Complete</button> -->
         <div class="display"></div>
     </main>
     <script src="/Mini-Projects/to_do-list_again/script.js"></script>
@@ -132,6 +140,8 @@ Pretend you're the browser telling me the story. 😄🚀
 
 
  <!-- 
+
+
  
   
 
@@ -253,5 +263,224 @@ user click save
 ↓
 then browser will start again run the save button funciton
 
+problem 
+we need to show a counter who show how many taks are there currenl=tly and then must show automatically that after adding or deleteing a tasking new count 
+solution add a database.length to both add and delete make it render  
+
+
+browser waits
+↓
+user adds/delete a task
+↓
+memory changes
+↓
+renderTasks() run
+↓
+clear display
+↓
+grab the database.length
+↓
+run the for loop
+↓
+show length in task counter
+↓
+show other elements on display aswell
+↓
+browser waits
+
+
+
+Problem -> show the total tasks and pending in different sectiond and completed in a different section
+solution letsdivide this into 3 parts 
+1st this is normal way of rending no changes needed
+2nd show only pending ones now we'll create a new funciton who will run renderTasks but will filter the status who has pending so ill declare variable who has a string pending and will compare that string with status and will render only those who has pending and not show anyone else  {or i can just assign these before addtasks and only run render it feels kinda complecated}
+3rdshow only the complete same way render those who has complete status after there are being done comparing with thevariable who has complete string so that it can check wheather it has complete or not 
+
+
+algorithm
+↓
+browser waits
+↓
+user click on either of them tasks/pending/complete
+↓
+browser reads the memory
+↓
+now the showStatus() will run and it has two variable one contain the pending string and other has the complete string
+↓
+browser will run the renderTasks()
+↓
+then this will clear the display
+↓
+it will run for loop 
+↓
+and will ask if the the pending/complete variable matches to status who has any pending/complete if yes show only pending/complete ones(idont how will it show, i guess i need to makeit work ) 
+↓
+otherwise showthe normal all tasks 
+↓
+browser waits
 
 -->
+
+
+
+<!--  .
+
+
+---
+
+🧪 Experiment 1 — Can an HTML button call a function?
+
+In index.html, create a button that has nothing to do with tasks.
+
+When you click it, make it run a function that only does:
+
+console.log("Pending button clicked")
+
+Question to answer:
+
+> Can a button in HTML call a JavaScript function without being inside renderTasks()?
+
+const showAllTaskssBtn = document.querySelector(".show-all-task");
+
+function showAllTaskss(index) {
+console.log("Pending button clicked")
+}
+showAllTaskssBtn.addEventListener("click", showAllTaskss)
+
+
+
+---
+
+🧪 Experiment 2 — Can that function call renderTasks()?
+
+Inside that same function:
+
+Don't change the database.
+
+Just call:
+
+renderTasks()
+
+Question:
+
+> Does renderTasks() still run even though the button wasn't created inside it?
+function showAllTaskss(index) {
+console.log("Pending button clicked");
+render(); [i check with a console in render and click the button showalltaskssbtn]
+}
+
+
+
+---
+
+🧪 Experiment 3 — Can a function change a variable?
+
+Create one new variable.
+
+Initial value:
+
+All
+
+Now click your test button.
+
+Inside the function:
+
+Change that variable.
+
+Then:
+
+console.log(variable)
+
+Question:
+
+> Did the variable change?
+yes
+const showAllTasksssBtn = document.querySelector(".show-all-task");
+
+let newVariable = "All";
+ function showAllTasksss(index) {
+console.log("Pending button clicked");
+newVariable = "Pending";
+
+console.log(newVariable)
+renderTasks();
+}
+showAllTasksssBtn.addEventListener("click", showAllTasksss)
+
+
+
+---
+
+🧪 Experiment 4 — Does renderTasks() see that variable?
+
+Inside renderTasks() add only:
+
+console.log(variable)
+
+Click your test button again.
+
+Question:
+
+> Does renderTasks() print the updated value?
+yes
+
+If yes...
+
+Ask yourself:
+
+> How did renderTasks() know?
+huh how bcuz the newvariable was called inthe function and that function called render is that why
+
+
+That experiment is very important.
+
+
+---
+
+🧪 Experiment 5 — Does the loop need another loop?
+
+Inside your loop add:
+
+console.log(task.status)
+
+Then, before creating the card, ask yourself:
+
+> "If I already know this task's status...
+
+Why would I need another loop to find it again?"
+but i dont know where task status exist
+
+
+
+Don't change anything yet.
+
+Just observe.
+
+
+---
+
+🚫 One rule
+
+Don't try to finish Filters today.
+
+Today your mission is:
+
+> Break your own assumptions.
+
+
+
+Developers become good because they constantly ask:
+
+> "What actually happens if I try this?"
+
+
+
+Go run those five experiments.
+
+Don't tell me whether the filter works.
+
+Tell me what surprised you during the experiments.
+
+I think Experiment 4 is going to completely change how you think about functions. -->
+
+
