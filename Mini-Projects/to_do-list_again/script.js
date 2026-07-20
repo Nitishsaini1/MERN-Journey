@@ -11,6 +11,7 @@ let currentFilter = "All";
 let database = [];
 let editingIndex = -1;
 let showTasks = -2;
+let showWarning = "";
 
 function addTask() {
   const taskCard = {
@@ -48,8 +49,13 @@ function renderTasks() {
   counter.textContent = database.length;
   for (let i = 0; i < database.length; i++) { 
     if (i == editingIndex) {  
-            displayTask.innerHTML =
-        displayTask.innerHTML + "<br>" +'<input type="text" id="editInput" value="' + database[i].title +'">';
+            displayTask.innerHTML =            displayTask.innerHTML + "<br>" +'<input type="text" id="editInput" value="' + database[i].title +'">';
+            if (showWarning == "Please Enter the task") {
+          
+              displayTask.innerHTML = displayTask.innerHTML + "<br>" +'<div>Warning : Please Enter the task</div>';
+        } else {
+          
+        }
       displayTask.innerHTML = displayTask.innerHTML + "<br>" + "Status :  " + database[i].status;
       displayTask.innerHTML = displayTask.innerHTML + "<br>" +'<button onclick=toggleTask("' + i +  '")> complete  </button>';
       displayTask.innerHTML = displayTask.innerHTML + '<button onclick = saveTask("' +   i +  '")>Save</button>';
@@ -99,13 +105,24 @@ function editTask(index) {
 
 
 }
+
 function saveTask(index) {
 
   
   const editInput = document.querySelector("#editInput");
-  database[index].title = editInput.value;
-  editingIndex = -1;
-  renderTasks();
+  if (editInput.value.trim() == "") {
+    //  editingIndex = -1;
+    showWarning = "Please Enter the task";
+    renderTasks();
+  } else {
+    
+    database[index].title = editInput.value;
+     showWarning = "";
+    editingIndex = -1;
+    renderTasks();
+  }
+  showWarning = "";
+  
 
 
 
