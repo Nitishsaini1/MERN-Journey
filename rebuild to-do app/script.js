@@ -117,16 +117,12 @@ function searchTitle() {
 function saveDatabase() {
     localStorage.setItem("Task",JSON.stringify(database))
 }
-
-  
 addTaskButton.addEventListener("click",addTask )  
 clearSearchButton.addEventListener("click",clearSearch  )  
 searchTitleButton.addEventListener("click",searchTitle  )  
 allTasksButton.addEventListener("click", allTasks ) 
 pendingTasksButton.addEventListener("click",pendingTasks) 
 completeTasksButton.addEventListener("click", completeTasks) 
-
-
 if ((database = JSON.parse(localStorage.getItem("Task"))) == null) {
     database = []
 }  

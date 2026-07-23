@@ -699,3 +699,178 @@ Instead of continuing this project immediately, I want to spend about **30 minut
 Once that clicks, I think 80% of the confusion you've been carrying for the last few days will disappear. Then we'll come back to the To-Do app, and you'll be able to explain every line instead of just following it.
 
 I think that's the missing foundation—not JavaScript syntax, but understanding **how the browser executes your program**.
+
+
+Good. Let's begin Day 20 properly.
+
+I don't want us to jump into HTML or JavaScript yet.
+
+Yesterday's success came from one thing:
+
+> We designed before we coded.
+
+
+
+We're going to do exactly the same today.
+
+
+---
+
+📒 Today's Mission (Session 1)
+
+Step 1: Understand the problem
+
+Imagine the calculator is completely empty.
+
++------------------+
+|                0 |
++------------------+
+| 7 | 8 | 9 | ÷ |
+| 4 | 5 | 6 | × |
+| 1 | 2 | 3 | - |
+| C | 0 | = | + |
++------------------+
+
+Forget code.
+
+Pretend you're designing this for someone else.
+
+
+---
+
+Step 2: Ask the important questions
+
+Open your notebook and answer these.
+
+Question 1
+
+When the user presses:
+
+2
+
+What changes?
+i think we constantly need to keep check of every number who were press bcuz this is going to accept more than two input.
+and when press 2 the state 2 was in as resting state as soon as it was click it got into the active state
+
+Question 2
+
+Now they press:
+
+5
+
+Should the calculator remember:
+
+2
+
+and
+
+5
+
+as two separate numbers?
+
+Or should it become:
+
+25
+
+Why?
+of course if after 2 was pressed 5 it should become 25 bcuz no operator was click in between this operation
+
+---
+
+Question 3
+
+Now they press:
+
++
+
+What information should the calculator remember?
+
+Think carefully.
+
+Does it need to remember:
+
+First number?
+
+Operator?
+
+Current display?
+
+Something else?
+
+again it constantly need to track of every button who was pressed and show the things accordingly how it was supposed to see
+
+---
+
+Question 4
+
+Now they press:
+
+3
+6
+
+Where does this number belong?
+it belong to the number it has before it that are 25 and + 
+string + string if no operator was clicked in between two number they should stay together not do some operations
+---
+
+Question 5
+
+Finally they press:
+
+=
+
+What should happen step by step?
+
+Not code.
+
+Describe the flow.
+
+lets say it was this
+
+it like this (string + string ) + (string + string ) = 
+("2" +"5")+("3"+"6")
+("25")+("36")
+use toNumber that becomes 25+36 = 61
+
+ohh i see what youre trying to say 
+user press 2 
+user press 5
+user press +
+user press 3
+user press 6
+user press =
+and the result come as 61
+---
+
+🎯 Goal
+
+By the end of this session, I want a flow like this (written in your own words):
+
+Press Number
+      ↓
+...
+      ↓
+Press Operator
+      ↓
+...
+      ↓
+Press Number
+      ↓
+...
+      ↓
+Press =
+      ↓
+...
+
+
+---
+
+One request
+
+Don't think about JavaScript yet.
+
+Today I want you to act like a software designer, not a programmer.
+
+Just answer one question at a time and let the algorithm grow naturally.
+
+This is exactly how you became successful with the Todo App, and I want to build the same habit for every project from now on. 🚀

@@ -1,0 +1,232 @@
+.button-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 9px;
+    /* width: 400px; */
+}
+.calculator, header{
+    max-width: 350px;
+        /* display: flex; */
+        /* text-align: center; */
+        margin: 0 auto;
+}
+.button-container button{
+    /* width: 30px; */
+    height: 30px;
+    /* font-size: 10px; */
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.button-container button:hover{
+    background-color: lightgray;
+}
+
+.display{
+   
+    margin-bottom: 10px;
+    font-size: 33px;
+    padding: 10px;
+    border: 2px solid black;
+    text-align: right;
+    font-weight: bold;
+    /* width: auto; */
+}
+
+
+.reset, .equal, .operator{
+    background-color: #f1e4e6;
+}
+
+
+/* 
+ 
+🎯 CSS Milestone 1 (Complete this before coming back)
+
+1. Calculator container
+
+Style the calculator itself.
+
+Think about:
+
+width (don't make it full screen)
+
+margin (center it)
+
+padding
+
+border
+
+border-radius
+
+
+
+---
+
+2. Display
+
+Make it look like a calculator display.
+
+Include:
+
+larger font
+
+padding
+
+border
+
+right-aligned text
+
+fixed height
+
+margin-bottom
+
+
+
+---
+
+3. Grid
+
+On the button container:
+
+display: grid
+
+grid-template-columns: repeat(4, 1fr)
+
+gap
+
+
+
+---
+
+4. Buttons
+
+For all buttons:
+
+height
+
+font-size
+
+border
+
+border-radius
+
+cursor
+
+transition (optional)
+
+
+⚠️ Remove the fixed width: 30px.
+
+Let Grid control the width.
+
+
+---
+
+5. Button hover
+
+Add a hover effect.
+
+It can simply:
+
+change background color
+
+or slightly darken
+
+
+Nothing fancy.
+
+
+---
+
+6. Special buttons
+
+Give different colors (or styling) to:
+
+Operators
+
+Reset
+
+Equals
+
+
+Keep it simple.
+
+
+---
+
+7. Header
+
+Decide yourself:
+
+Keep it.
+
+Center it.
+
+Or remove it.
+
+
+I don't mind either choice.
+
+
+---
+
+🎯 Things I want you to experiment with
+
+While doing the CSS, answer these questions yourself:
+
+1. What happens if you change:
+
+
+
+repeat(4, 1fr)
+
+to
+
+repeat(3, 1fr)
+
+2. What does gap actually affect?
+
+
+3. What happens if you remove the button's fixed height?
+
+
+4. Does Grid control width, height, or both?
+
+
+
+
+---
+
+Don't spend time on...
+
+❌ Shadows
+
+❌ Fancy animations
+
+❌ Perfect colors
+
+❌ Responsive design
+
+Our mission is JavaScript, not winning a CSS design contest.
+
+
+---
+
+Today's finish line
+
+By the time you're done, I want a calculator that:
+
+✅ Looks like a calculator.
+
+✅ Has a clean layout.
+
+✅ Uses Grid correctly.
+
+✅ Is ready for JavaScript.
+
+
+After that, we'll spend almost all our time on the calculator logic, because that's the part that will strengthen your JavaScript skills the most. 🚀
+
+*/
