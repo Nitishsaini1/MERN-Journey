@@ -9,26 +9,28 @@ let operatorValue = "";
 let rightValue = "";
 let currentValue = "";
 function number(eventObject){
-const clickedButtonText = eventObject.target.innerText;
-    // console.log(clickedButtonText);
+const clickedButtonText = eventObject.target.innerText; 
     currentValue = currentValue + clickedButtonText;
-    displayElement.textContent = leftValue + currentValue;
-    // console.log(eventObject.target.innerText);
-    console.log("currentValue"+currentValue);
-    console.log("leftValue"+leftValue);
- }
+    displayElement.textContent = leftValue +operatorValue+ currentValue; 
+}
 function operator(eventObject){ 
          const clickedButtonText = eventObject.target.innerText;
-         leftValue = currentValue;
-         operatorValue= clickedButtonText;
+         
+        //  operatorValue= clickedButtonText;
+         if (clickedButtonText == clickedButtonText ) {
+            
+         } else if (condition) {
+            
+         } else {
+             
+            leftValue = currentValue;
+            operatorValue=clickedButtonText;
          currentValue = "";
-        //  displayElement.textContent = leftValue;
-         displayElement.textContent = leftValue + operatorValue+ currentValue; //i like this ver more but it has its flaw
-           console.log("currentValue"+currentValue);
-    console.log("leftValue"+leftValue);
+         }
+          m
+         displayElement.textContent = leftValue + operatorValue+ currentValue;  
 }
 function reset(eventObject){ 
-    
 const clickedButtonText = eventObject.target.innerText;
 displayElement.textContent = 0;
 leftValue="";
@@ -45,13 +47,21 @@ function equalTo(eventObject){
         leftValue =leftValue  - currentValue 
     } else if(operatorValue == "*") {
         leftValue =leftValue * currentValue 
-    } else{
+    } else if (operatorValue == "/") {
         leftValue = leftValue / currentValue 
+    } else if (operatorValue == "") {
+        
+        displayElement.textContent = 0;
+    } else {
         
     } 
     currentValue = "";
     operatorValue="";
     displayElement.textContent = leftValue; 
+      console.log("currentValue"+currentValue);
+    console.log("leftValue"+leftValue);
+    console.log(operatorValue + "Operator");
+    
 }
 console.log("Run");
 for (let i = 0; i < numberButtons.length; i++) {
@@ -66,29 +76,4 @@ resetButton[i].addEventListener("click", reset );
 for (let i = 0; i < equalButton.length; i++) {
     equalButton[i].addEventListener("click", equalTo);
 }
-
-// Number button
-// Read the clicked digit.
-// Update currentValue.
-// Update the display.
-// Test that typing 7 → 5 → 9 shows 759.
-// Display
-// Every time currentValue changes, the display should reflect it.
-// Get this working before touching operators.
-// Operator buttons
-// Store currentValue into leftValue.
-// Store the operator.
-// Clear currentValue.
-// Update the display appropriately.
-
-//**********************8 */
-// Equals (=)
-// Use leftValue, operatorValue, and currentValue.
-// Perform the calculation.
-// Store the result back into leftValue.
-// Clear the other state variables.
-// Display the result.
-//*************************************** */
-// Reset (C)
-// Clear all state variables.
-// Reset the display.
+ 
