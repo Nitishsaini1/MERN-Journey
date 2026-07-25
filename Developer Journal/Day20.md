@@ -526,3 +526,301 @@ No jumping ahead.
 
 ******************88
 
+Perfect. Since you're debugging by memory, I'll give you test cases the way a QA engineer would. Don't just click buttons—write the memory after every click.
+
+Use this table for each test:
+
+Click	leftValue	operatorValue	currentValue	Display
+
+
+
+
+---
+
+Test 1 – Basic Addition
+
+Purpose: Verify the normal flow.
+
+Buttons:
+
+1
+2
++
+5
+=
+
+Expected final display:
+
+17
+
+Questions to answer while tracing:
+
+After pressing +, what happened to currentValue?
+it became empty
+Which variable now stores 12?
+leftValue
+After =, which variables become empty?
+opearatorValue and currentValue
+Which variable keeps 17?
+leftValue
+
+
+---
+
+Test 2 – Change Operator Before Second Number
+
+Purpose: Verify operator replacement.
+
+Buttons:
+
+8
++
+-
+*
+2
+=
+
+Ask yourself:
+
+Did leftValue ever change after pressing -?
+no
+Should + disappear?
+yes if next button is a operator and currentvalue is empty then that + will replace by new operator button but if next button is between 0-9 it should not disappear
+Which operator should finally be used?
+* this should be used in final
+
+Expected result:
+
+16
+
+
+---
+
+Test 3 – Chain Calculations
+
+Purpose: Verify calculation() is reused.
+
+Buttons:
+
+7
+5
++
+2
+5
+-
+3
+=
+
+Human math:
+
+75 + 25 = 100
+
+100 - 3 = 97
+
+Expected display:
+
+97
+
+Questions:
+
+When did calculation() execute?
+when user press "-"
+What was leftValue immediately afterward?
+when user press - the calculation happen 100 shift to leftValue 
+
+
+---
+
+Test 4 – Continue After Equals
+
+Purpose: The bug you recently found.
+
+Buttons:
+
+1
+2
++
+5
+=
++
+3
+=
+
+Expected:
+
+20
+
+Memory after the first = should look something like:
+
+leftValue = 17
+operatorValue = ""
+currentValue = ""
+
+After pressing +, ask:
+
+> Which branch ran?
+the branch who check if current value is empty and operator value isalso empty that way the new click button will assign inside the operator value and will run as normal 
+
+
+
+---
+
+Test 5 – Ignore Leading Operator
+
+Purpose:
+
+The calculator should not allow:
+
++
+
+at the very beginning.
+
+Buttons:
+
++
++
++
+
+Questions:
+
+Which branch executes?
+the branch who check if a operator is empty and will do return that way the function will exit 
+Does any variable change?
+no
+Does return execute?
+yes
+
+Expected memory:
+
+leftValue = ""
+operatorValue = ""
+currentValue = ""
+
+
+---
+
+Test 6 – Multiple Equals
+
+Buttons:
+
+8
++
+2
+=
+=
+=
+
+Expected question:
+
+Should your calculator
+
+keep showing 10?
+if operator is empty and then press the = ,the display shouldshow leftvalue
+calculate again?
+no it should not bcuz calculator doesnt what to do with alone left value if no operator and currentvalue is available
+ignore the extra =?
+yes they should get ignore 
+
+Whatever behavior you choose, it should be intentional.
+
+
+---
+
+Test 7 – Operator Spam
+
+Buttons:
+
+9
++
+-
+*
+/
++
+2
+=
+
+Expected math:
+
+9 + 2 = 11
+
+Questions:
+
+Was leftValue ever modified while changing operators?
+no it was not
+Did only the operator change?
+yes
+
+
+---
+
+Test 8 – Equals Without Second Number
+
+Buttons:
+
+8
++
+=
+
+Questions:
+
+Should anything happen?
+no bcuz with out the currentvalue nothing can happen
+Should calculation() run?
+no it should not
+Does your validation stop it?
+yes if currentvalue is empty then going forward is not right
+
+
+---
+
+Test 9 – Number After Equals
+
+Buttons:
+
+4
++
+5
+=
+9
+
+Ask yourself:
+
+Should pressing 9 mean
+
+99
+
+or
+
+9
+
+Think about how a real calculator behaves and decide what behavior you want.
+i see the old value should get replace  by new value append the new calue to old value is not good
+
+---
+
+Test 10 – Full Stress Test
+
+Buttons:
+
+2
+5
++
+5
+*
+3
+-
+4
+/
+7
+=
+
+Don't calculate everything in your head.
+
+Instead, after every operator, pause and write:
+
+leftValue = ?
+operatorValue = ?
+currentValue = ?
+display = ?
+
+If you can complete this test without getting confused about your variables, you've reached the point where you're reasoning about the program's state instead of guessing. That's exactly the skill this calculator is meant to build.

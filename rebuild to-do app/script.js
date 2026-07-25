@@ -75,11 +75,10 @@ function editInputTask(index) {
 function saveEdit(index){
     const editInput = document.querySelector("#edit-input"); 
        if (editInput.value.trim() == "" ) {
-           displayTasks.innerHTML=displayTasks.innerHTML+("<br>")+ '<input type="text" value='+database[i].title+' id="edit-input">';  
+        //    displayTasks.innerHTML=displayTasks.innerHTML+("<br>")+ '<input type="text" value='+database[index].title+' id="edit-input">';  
            displayTasks.innerHTML = displayTasks.innerHTML+'<div>Warning :'+'Please Enter the task'+'</div>'+ ("<br>"); 
-           displayTasks.innerHTML = displayTasks.innerHTML+'<button onclick=saveEdit("'+i+'")>Save</button>'+ ("<br>"); 
+        //    displayTasks.innerHTML = displayTasks.innerHTML+'<button onclick=saveEdit("'+index+'")>Save</button>'+ ("<br>"); 
            } else {
-            
                database[index].title = editInput.value;
                editingIndex = -1;
                saveDatabase();

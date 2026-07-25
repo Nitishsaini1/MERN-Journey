@@ -5,30 +5,53 @@ const equalButton = document.querySelectorAll(".equal");
 const displayElement = document.querySelector(".display");
 
 let leftValue = "";
-let operatorValue = "";
-let rightValue = "";
+let operatorValue = ""; 
 let currentValue = "";
-function number(eventObject){
+function number(eventObject){ 
 const clickedButtonText = eventObject.target.innerText; 
-    currentValue = currentValue + clickedButtonText;
+    
+    if(leftValue != "" && operatorValue == ""){
+        leftValue = "";
+        currentValue = currentValue + clickedButtonText;
+    }else{
+        currentValue = currentValue + clickedButtonText;
+    }
     displayElement.textContent = leftValue +operatorValue+ currentValue; 
 }
-function operator(eventObject){ 
+function operator(eventObject){  
          const clickedButtonText = eventObject.target.innerText;
-         
-        //  operatorValue= clickedButtonText;
-         if (clickedButtonText == clickedButtonText ) {
-            
-         } else if (condition) {
-            
-         } else {
-             
-            leftValue = currentValue;
-            operatorValue=clickedButtonText;
-         currentValue = "";
-         }
-          m
+         if (currentValue == "" && operatorValue != "") {
+            operatorValue = clickedButtonText;
+         } else if (currentValue != "" && operatorValue != "") {
+            calculation();
+            operatorValue = clickedButtonText;
+         } else if (operatorValue == "" && currentValue != "") {
+             leftValue = currentValue;
+             operatorValue=clickedButtonText;
+             currentValue = "";
+         } else if (leftValue != "") { 
+            operatorValue =clickedButtonText;
+         } 
+            if (operatorValue == "" && currentValue == "") {  return;    }   
          displayElement.textContent = leftValue + operatorValue+ currentValue;  
+}
+
+function calculation(){
+     leftValue =Number(leftValue);
+     currentValue = Number(currentValue);
+     if(operatorValue == "+") {
+        leftValue =leftValue +currentValue 
+    } else if(operatorValue == "-") {
+        leftValue =leftValue  - currentValue 
+    } else if(operatorValue == "*") {
+        leftValue =leftValue * currentValue 
+    } else if (operatorValue == "/") {
+        leftValue = leftValue / currentValue 
+    } else {
+        
+    } 
+    operatorValue = "";
+    currentValue ="";
 }
 function reset(eventObject){ 
 const clickedButtonText = eventObject.target.innerText;
@@ -39,31 +62,13 @@ operatorValue="";
 }
 function equalTo(eventObject){ 
     const clickedButtonText = eventObject.target.innerText;
-     leftValue =Number(leftValue);
-     currentValue = Number(currentValue);
-    if(operatorValue == "+") {
-        leftValue =leftValue +currentValue 
-    } else if(operatorValue == "-") {
-        leftValue =leftValue  - currentValue 
-    } else if(operatorValue == "*") {
-        leftValue =leftValue * currentValue 
-    } else if (operatorValue == "/") {
-        leftValue = leftValue / currentValue 
-    } else if (operatorValue == "") {
+    if (operatorValue == "" || leftValue == "" || currentValue == "") {
         
-        displayElement.textContent = 0;
     } else {
-        
-    } 
-    currentValue = "";
-    operatorValue="";
-    displayElement.textContent = leftValue; 
-      console.log("currentValue"+currentValue);
-    console.log("leftValue"+leftValue);
-    console.log(operatorValue + "Operator");
-    
-}
-console.log("Run");
+        calculation();
+        displayElement.textContent = leftValue;      
+    }
+} 
 for (let i = 0; i < numberButtons.length; i++) {
     numberButtons[i].addEventListener("click", number );
 }
