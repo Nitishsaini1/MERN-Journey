@@ -23,7 +23,7 @@ function addTask() {
         title:taskInput.value,
         status:"Pending"
     };
-    if (taskInput.value.trim(" ") == "") {
+    if (taskInput.value.trim() == "") {
         warning.textContent = "Please Enter the text"
     } else {
       database.push(taskCard);  
@@ -50,8 +50,8 @@ function renderTasks(){
     taskCounter.textContent = database.length;
     for (let i = 0; i < database.length; i++) {
         if (i == editingIndex) {
-           displayTasks.innerHTML=displayTasks.innerHTML+("<br>")+ '<input type="text" value='+database[i].title+' id="edit-input">'; 
-            displayTasks.innerHTML = displayTasks.innerHTML+'<button onclick=saveEdit("'+i+'")>Save</button>'+ ("<br>"); 
+           displayTasks.innerHTML+= ("<br>")+ '<input type="text" value="'+database[i].title+'" id="edit-input">'; 
+            displayTasks.innerHTML  += '<button onclick=saveEdit("'+i+'")>Save</button>'+ ("<br>"); 
         } else if ( (database[i].status == currentFilter ||currentFilter == "All") &&  database[i].title.includes(searchText)) {
              loopRun(i);
         }  
