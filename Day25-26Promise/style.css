@@ -1,0 +1,7 @@
+.flex{
+    display: flex;
+}
+
+#name{
+    margin-bottom: 10px;
+}
