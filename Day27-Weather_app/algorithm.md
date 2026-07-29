@@ -28,4 +28,6 @@ function displayUser(user){....} this way user would be able to act just like da
       ↓     
 so that we can show our data on the screen
       ↓
-Display weather
+Display weather  
+      ↓
+ 
