@@ -4,40 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Weather App</title>
 </head>
 <body>
-    <header class="flex">
-        <label>Enter City : </label>
-        <input type="text" placeholder="City Name" class="city-input">
-        <button class="submit-btn">Search</button>
+    <header class="flex  flex-center">
+
+        <i class="fa-solid fa-cloud-sun-rain clouds-weather"></i>
+        <div>
+            <h1>Weather App</h1>
+            <p class="info-weather-app">Get real time information</p>
+        </div>
+
     </header>
-    <main>
-        <div class="warning"></div>
-        <div class="flex city" >
-            <div >City : </div>
-            <div class="city-name"></div>
+    <main >
+        <section>
+
+            <div class="flex  flex-center font-size">
+                <label  >Enter City :</label>
+                <input type="text" placeholder="City Name" class="city-input">
+                <button class="submit-btn">Search</button>
+            </div>
+        </section>
+        <div class="warning flex-center"></div>
+
+        <section class="container-box   ">
+         
+        <div class="   " >
+            <!-- <div >City : </div> -->
+             <div class="card-1">
+                 <div class="flex">
+                     <i class="fa-solid fa-cloud clouds-weather-2 "></i>
+                     <div class="align-center">
+                         <div class="city-name">City</div>
+                         <div class="weather">Weather</div>
+                        </div>
+                 </div>       
+                 <div>
+                     <div class=" "> </div>
+                 </div>
+                </div>
         </div>
+        <div class="flex card-2">
+
+       
         <div class="flex">
-            <div>Temprature : </div>
-            <div class="temprature"></div>
+            <i class="fa-solid fa-temperature-full  icon-card-2"></i>
+            <div>
+
+                <div class="temprature-text">Temprature</div>
+                <div class="temprature temprature-text"></div>
+            </div>
         </div>
+       
         <div class="flex">
-            <div>Weather : </div>
-            <div class="weather"></div>
-        </div>
-        <div class="flex">
-            <div>Humidity : </div>
-            <div class="humidity"></div>
+            <i class="fa-solid fa-droplet  icon-card-2"></i>
+            <div>
+
+                <div  class="temprature-text">Humidity</div>
+                <div class="humidity temprature-text"></div>
+            </div>
         </div>
         
         <div class="flex">
-            <div>Wind Speed : </div>
-            <div class="wind-speed"></div>
+            <i class="fa-solid fa-wind  icon-card-2"></i>
+            <div>
+                <div  class="temprature-text">Wind Speed</div>
+                <div class="wind-speed   temprature-text"></div>
+            </div>
         </div>
+              </div>   
+        </section>
 
         <div class="error-message"></div>
     </main>
     <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/192235ef44.js" crossorigin="anonymous"></script>
+
 </body>
 </html>

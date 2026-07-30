@@ -51,9 +51,9 @@ function cityNameInput (){
 
 function displayWeather(weather){
     cityName.innerText =  weather.name;
-    temprature.innerText = weather.main.temp;
-    humidity.innerText = weather.main.humidity;
-    windSpeed.innerText = weather.wind.speed;
+    temprature.innerText = weather.main.temp + "°C";
+    humidity.innerText = weather.main.humidity + "%"; 
+    windSpeed.innerText = weather.wind.speed+"m/s";
     weatherCheck.innerText = weather.weather[0].description;
 }
  

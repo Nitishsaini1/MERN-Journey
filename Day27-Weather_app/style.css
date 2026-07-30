@@ -1,3 +1,64 @@
+/* css reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* main css start */
+body{
+    margin: 20px 100px;
+    font-family: "Poppins", sans-serif;
+}
+h1{
+    font-size: 50px;
+}
+main{
+    margin-top: 20px;
+}
+.info-weather-app{
+    margin-top: 10px;
+    font-size: 25px;
+}
 .flex{
     display: flex;
 }
@@ -5,4 +66,82 @@
 .city{
     margin: 10px;
     margin-left: 0;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
+.font-size{
+    font-size: 30px;
+    /* display: flex; */
+    justify-content: center;
+}
+.clouds-weather {
+    font-size: 100px;
+    color: bisque;
+}
+.clouds-weather-2{
+    font-size: 80px;
+    color: rgb(127, 127, 240); 
+}
+.icon-card-2{
+    font-size: 50px;
+    color: rgb(127, 127, 240);
+}
+.city-input{
+    margin: 0 20px;
+    padding-left:10px ;
+    font-size: 18px;
+    width: 300px;
+    border-radius: 5px;
+}
+.submit-btn{
+    background-color: rgb(111, 111, 235);
+    color: white;
+    border-radius: 10px;
+    width: 100px;
+}
+
+.container-box{  
+    box-shadow: 9px 6px 13px 10px rgba(0,0,0,0.1);
+    border-radius: 10px; 
+    width: 800px;
+    height: 300px;
+    margin: 10px auto;
+}
+
+.card-1{
+    display: flex;
+    justify-content: center;
+}
+.card-2{
+       box-shadow:12px 12px 18px 14px rgba(0,0,0,0.1);
+       height: 150px;
+       margin: 20px 10px 0 10px;
+       padding: 10px;
+       justify-content: space-around;
+       align-items: center;
+}
+
+.warning{
+    padding-right: 55px;
+}
+
+.temprature, .humidity, .wind-speed{
+    font-size: 70px;
+    text-align: center;
+    margin: 10px;
+    color: rgb(127, 127, 240);
+}
+.city-name{
+    font-size: 45px;
+}
+.align-center{
+    align-content: center;
+}
+.temprature-text{
+    font-size: 25px;
+    margin-left: 0; 
+    text-align: left;
 }
