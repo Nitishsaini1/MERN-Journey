@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/192235ef44.js" crossorigin="anonymous"></script>
+    <title>Weather App</title>
+</head>
+<body>
+    <!-- header section -->
+    <header>
+        <div class="flex">
+            <i class="fa-solid fa-cloud-sun-rain clouds-weather-icon"></i>
+            <div class="weather-app">
+                <h1>Weather App</h1>
+                <span>Get Real time information</span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- search section  -->
+        <section class="search-bar flex">
+            <label >Enter City :</label>
+            <input type="text" class="search-input" placeholder="Enter the City">
+            <button class="search-btn" >Search</button>
+        </section>
+        <!-- warning -->
+         <section>
+            <div class="warning flex"></div>
+         </section>
+        <!-- dashboard -->
+         <section class="box-shadow dashboard" >
+            <!-- card for city name and weather address -->
+            <div class="city-weather-card flex ">
+                <i class="fa-solid fa-cloud clouds-weather-2 "></i>
+                <div>
+                    <div class="city-name">City</div>
+                    <div class="city-weather">Weather</div>
+                </div>
+            </div>
+            <!-- card for city temp and other -->
+            <div class=" box-shadow flex space-between city-temp-card">
+                <div  class="flex weather-detail">
+                     <i class="fa-solid fa-temperature-full "></i>
+                    <div>
+                        <div >Temperature</div>
+                        <div class="temperature"></div>
+                    </div>
+                </div>
+                <div class="flex weather-detail">
+                      <i class="fa-solid fa-droplet "></i>
+                    <div>
+                        <div >Humidity</div>
+                        <div class="humidity"></div>
+                    </div>
+                </div>
+                <div class="flex weather-detail">
+                   <i class="fa-solid fa-wind "></i>
+                    <div>
+                        <div >Wind Speed</div>
+                        <div class="wind-speed"></div>
+                    </div>
+                </div>
+            </div>
+         </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
