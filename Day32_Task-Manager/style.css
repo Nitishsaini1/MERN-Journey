@@ -1,0 +1,176 @@
+ /* css resets */
+
+ 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* universal css */
+body{
+    text-align: center;
+    color: rgb(56, 53, 53);
+    background-color: #F8FAFC;
+    width: 100%;
+    max-width: 700px;
+    margin: 40px auto;
+    font-family: "Poppins", sans-serif;
+}
+main{
+  color:  #475569;
+}
+.flex{
+    display: flex;
+}
+/* header */
+.header h1{
+    font-size: 50px; 
+    color:  #1E293B;
+}
+.header p{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.pointer{
+    cursor: pointer;
+}
+input{
+    cursor: pointer;
+}
+/* input task  */
+.input-task-bar{
+    border: 2px #1E293B solid;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0, 0.8);
+    border-radius: 12px;
+    background: white;
+    margin: 30px 0;
+}
+.input-task{
+    padding: 10px 30px ;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+.input-task:focus{
+    border-color: #2563eb;
+}
+
+/* input task button */
+.add-task{
+    padding: 10px 44px;
+    border: none; 
+    background-color: #2563EB;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 10px;
+
+}
+.add-task:hover{
+    color: #1E293B ;
+}
+/* warning */
+.toast{
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #9b8a8a5b;
+    color: rgb(119, 103, 103);
+    padding: 12px 20px;
+    border-radius: 10px;
+
+}
+/* filter card */
+.filter-card button{
+    margin: 10px 10px 12px 0;
+    border: none;
+    background: white;
+    cursor: pointer;
+    font-size: 22px;
+    color:#1E293B ;
+}
+
+
+/* task-counter */
+
+.task-counter-card, .filter-card{
+    font-size: 26px;
+    text-align: left;
+    margin: 10px 0;
+    display: flex; 
+}
+
+.task-counter-card div{
+    padding-right: 10px;
+    
+}
+/* task list card */
+.task-list{
+    margin: 20px auto;
+    width: 80%;  
+}
+.task-list-card {
+    display: flex;
+        /* gap: 10px; */
+      justify-content:space-between;
+      align-items: center;
+      width: 100%;
+        font-size: 20px; 
+    font-weight: 550;
+    border: 3px solid #1E293B;
+}
+.task-list-card div{
+    padding: 10px 12px;  
+} 
+.left-side{
+    align-items: center;
+    gap: 15px; 
+}
+.right-side{
+    gap: 15px;
+}

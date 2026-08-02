@@ -349,3 +349,4 @@ console.log(basket);
 //  cities.toUpperCase();  i think you meant to say this instead of city.toUppercase() right or maybenot 
 //lets answer your question why we write this  city.toUpperCase(); without return right, so actually return does the main thing here like even if the map does its work and iterate over the elements it wont be able to store the new elements inside the uppCities bcuz when they make new element they wont understand what to do with it and only when did they have return do they will be able to store the cities inside the uppercities
 //-----------------------------
+
