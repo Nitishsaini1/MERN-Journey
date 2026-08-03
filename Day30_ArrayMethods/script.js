@@ -320,14 +320,14 @@ console.log(basket);
 
   console.log(upperCities);
 
-//   const num = [1,2,3,4];
+  const num = [1,2,3,4];
 
-//   const even= num.filter(
-//     function (num) {
-//         return num % 2 === 0;
+  const even= num.filter(
+    function (num) {
+        return num % 2 === 0;
         
-//     }
-//   )
+    }
+  )
 //   console.log(even);
 //    const num = [1,2,3,4];
 

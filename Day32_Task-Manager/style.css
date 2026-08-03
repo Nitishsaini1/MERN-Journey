@@ -86,7 +86,7 @@ input{
     background: white;
     margin: 30px 0;
 }
-.input-task{
+.input-task , .edit-input-task{
     padding: 10px 30px ;
     border: 1px solid #e2e8f0;
     border-radius: 10px;
@@ -108,7 +108,7 @@ input{
     cursor: pointer;
     transition: 0.3s;
     margin-left: 10px;
-
+    border-radius: 10px;
 }
 .add-task:hover{
     color: #1E293B ;
