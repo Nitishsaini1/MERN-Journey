@@ -133,8 +133,13 @@ input{
     cursor: pointer;
     font-size: 22px;
     color:#1E293B ;
+    border: 1px solid #1E293B;
+    border-radius: 12px;
 }
-
+.filter-card button:focus{
+    border: 1px solid #7cbebb;
+    border-radius: 12px;
+}
 
 /* task-counter */
 

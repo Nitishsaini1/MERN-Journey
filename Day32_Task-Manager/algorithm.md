@@ -251,3 +251,83 @@ after loop finishes show counter on screen
 
 ```
 
+
+-------
+<h5>Filters</h5>
+
+when click on completed render should only show the task who are completed it should not affect the database in the sligtest bit and no filter button should affect the database, bcuz we wanna show from dataabase who is completed or not or show all tasks
+
+if something is deleted from database why show it again like how will i recover it and whats the point 
+
+when click on all make true to all tasks that way we can show the all tasks either false or true , again we will not be modifying the database just logic that can make true for all
+
+when click on completed show only tasks who are completed
+when click on active show tasks who are not completed yet
+
+there is no point in makeing a seprate way for it identify the taks when it is already iterating over the tasks one by one and can easily capture the needed tasks 
+if we suppose try to give it a array and then render on it we might need to make a seprate logic for this
+
+```
+
+user clicks completed
+⬇
+it will run the renderTasks()
+⬇
+clear display
+⬇
+run for loop
+⬇
+it will enter the ifelse section for the filterlogic
+⬇
+there it will then look for cases who are true and them else skip them , same for active and as for all we just need to make it true for all that it show all task like a cariable who will compare and then like this true === true this  will surely make like yes they all come under all task category
+⬇
+then display them
+```
+
+
+
+----------------------
+
+<h1>Recap Of what i have done so far</h1>
+<p>
+
+What actually happens from the moment a user types a task and clicks Add until it appears on the screen?
+when a user type and click add, the add button trigger a click event which eventually execute a function that function does mainly a few things that first store the input in a variable if it has any spaces without any spaces and then a it check based on condition that if the input is empty show toast noti saying enter the task again , if the input is not empty push that input with a id and completed value in a wrapper of object and push that object into the database then run renderTask() and after it empty the input value 
+now come second what happeninside the renderTask() => it first empty the display innerhtml then render the data once again from database or from other areas it the call was from there 
+
+run renderTasks()
+⬇
+empty display
+⬇
+store the counter as 0 & store a variable a check as ""
+⬇
+run for loop
+⬇
+now store the database[i] as element for easy purpose
+⬇  => logic for counter &  checkbox 
+⬇                        ⬇
+⬇                       for every task check if its state of completed is true or false 
+⬇                        ⬇
+⬇                        if false add one to counter  and check as ""
+⬇                        ⬇
+                         if true show variable check as "checked"
+⬇   
+now it will decide if the editingId match the called id
+⬇
+if true show edit ui if no show normal ui
+⬇ => since this is for very first time it will show the normal UI 
+now display the Normal UI on top on empty display with every iteration
+⬇
+first ->  checkbox will display with this ${check}
+⬇
+second -> input will display with its task 
+⬇
+third -> edit button ui
+⬇
+fourth -> delete button ui
+⬇
+show task left value
+⬇
+browser wait
+
+</p>
