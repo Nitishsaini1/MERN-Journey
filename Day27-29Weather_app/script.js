@@ -20,27 +20,44 @@ function cityNameInput (){
                 return;
             }  
         }
-         let url = `https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=3e02a9ecde5bba9c92576cd374488488&units=metric`;
-         fetch(url)
-         .then(function (response){
-            return response.json();
-         }  )
-         .then(
-            function (data) {
-                displayWeather(data);
-            }
-         )
-         .catch(
-         function (error) {
-            console.log(error);
-            warning.innerText = "The Weather cannot load right now !"
-              } )
+        //i wanna keep this here to know what  promise look like 
+        //  let url = `https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=3e02a9ecde5bba9c92576cd374488488&units=metric`;
+        //  fetch(url)
+        //  .then(function (response){
+        //     return response.json();
+        //  }  )
+        //  .then(
+        //     function (data) {
+        //         displayWeather(data);
+        //     }
+        //  )
+        //  .catch(
+        //  function (error) {
+        //     console.log(error);
+        //     warning.innerText = "The Weather cannot load right now !"
+        //       } )
+
+
+              fetchData(userInput);
          cityInput.value="";
     warning.innerText = "";
     }
    
 }
 
+async function fetchData(userInput) {
+                  try { 
+                    let url = `https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=3e02a9ecde5bba9c92576cd374488488&units=metric`;
+        
+      const response  = await fetch(url);
+      const data = await response.json();
+      console.log(data);
+       displayWeather(data);
+    } catch (error) {
+        console.log(error);
+        warning.innerText = "The Weather cannot load right now !"; 
+    }
+              }
 function displayWeather(weather){
     cityName.innerText =  weather.name;
     temprature.innerText = weather.main.temp + "°C";
