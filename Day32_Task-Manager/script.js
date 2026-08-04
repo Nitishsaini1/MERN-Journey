@@ -7,9 +7,8 @@ const taskCounter = document.querySelector(".task-counter");
 const displayTaskList = document.querySelector(".task-list");
 const toast = document.querySelector(".toast");
 let database;
-
-let editingId = -1;
 let nextId = 1;
+let editingId = -1; 
 let filter = "";
 const toastText = (message)=>{
     toast.innerText = message; 
@@ -17,18 +16,29 @@ const toastText = (message)=>{
   setTimeout(() => {
       toast.style.display = "none"
     },  2000);
-};
-const applyCurrentFilter =()=>{
-      if (filter === "active") {
-        activeFilterTask();
-     } else if (  filter === "complete") {
- completedFilterTask();
-     } else {     
-        saveDatabase();
-         renderTask(database);
-     }
+}; 
 
-};
+
+const applyCurrentFilter = () => {
+    if (filter === "active") {
+        activeFilterTask();
+    } else if (filter === "complete") {
+   completedFilterTask();
+    } else { 
+        renderTask(database);
+    }
+}
+const calculateNextId = ()=> {
+    let biggestId =0;
+    for (let i = 0; i < database.length; i++) {
+        const element = database[i];
+        if (biggestId < element.id) { 
+            biggestId = element.id;
+            
+        }  
+    }
+    nextId =  biggestId +1;
+}
 const renderTask = (tasks) => {
      displayTaskList.innerHTML = "";
        let counter = 0;
@@ -41,6 +51,7 @@ const renderTask = (tasks) => {
                 counter++;
                 checkBox ="";
             }
+           
             if (editingId === element.id) {
                  displayTaskList.innerHTML  += `<ul class=" task-list">
                 <li class="task-list-card flex"> 
@@ -83,18 +94,22 @@ const addTask= ()=>{
         text:userInput,
         completed:false
     };
-    nextId++;
+    nextId++; 
         database.push(taskCard);
         saveDatabase();
-         renderTask(database);
+        applyCurrentFilter();
+        //  renderTask(database);
          
-        }
-        // userInput = "" //why this not work but next line work  
+        } 
          inputTask.value = "";
 };
 const toggleTask = (id) => { 
      let task = database.find((index)=> index.id === id);
      task.completed = !task.completed;
+     
+    editingId =-1;
+    
+    saveDatabase();
      applyCurrentFilter();
    
 };
@@ -105,19 +120,21 @@ const deleteTask = (id) => {
         }else{
              database.splice(deleteIndex,1);
         }
-   
+        
+    saveDatabase();
      applyCurrentFilter();
 };
 const editTask = (id) => {
-    editingId = id;
-    renderTask(database);
+    editingId = id;  
+       applyCurrentFilter();
     const editInput = document.querySelector(".edit-input-task")
     editInput.focus();
      editInput.setSelectionRange(editInput.value.length,editInput.value.length )
+  
 };
 const saveTask = (id) => {
     const editInput = document.querySelector(".edit-input-task")
-     let task = database.find((index)=> index.id === id);
+     let task = database.find((task)=> task.id === id);
     if (editInput.value.trim() === "") { 
         toastText("Please enter the task"); 
         return
@@ -126,12 +143,14 @@ const saveTask = (id) => {
     }
     editingId =-1;
     saveDatabase();
-     renderTask(database);
+    applyCurrentFilter();
+    //  renderTask(database);
 };
-const allFilterTask = ( ) => {
-    // let allFilter = database.filter()
+
+const allFilterTask = ( ) => { 
     filter = "";
-    renderTask(database); //here simply let render do its work and let show according to database every tasks
+    applyCurrentFilter();
+    // renderTask(database);  
 };
 const activeFilterTask = ( ) => {
     let pendingTasks = database.filter((tasks) => tasks.completed === false
@@ -155,51 +174,14 @@ const loadDatabase = () => {
         
         database = [];
     } else{
-
         database = temp;
-    }   
+    }    
+    applyCurrentFilter(); 
 }; 
-
-
-loadDatabase(); 
+loadDatabase();
+calculateNextId(); 
+ 
 addTaskBtn.addEventListener("click", addTask);
-allFilterBtn.addEventListener("click", allFilterTask)
-activeFilterBtn .addEventListener("click", activeFilterTask)
-completedFilterBtn.addEventListener("click", completedFilterTask)
-// let db = [
-//     {name:true},
-//     {name:false},
-//     {name:true},
-//     {name:false},
-//     {name:true}
-// ]
-
-// const  render = (params) => { //here that new array got inside the params 
-
-//     for (let i = 0; i < params.length; i++) {
-//         const element = params[i];
-//         console.log(element); 
-//     }  
-// } 
-// const active = () =>
-//     { 
-//         let pending  = db.filter((task) => task.name === false);  
-//         render(pending); //the new array is inside the pending 
-//     } 
-
-//     active();
-
-    
-// const complete = () =>
-//     { 
-//         let completes  = db.filter(( task) => task.name === true); 
-//         render(completes); //the new array is inside the pending 
-//     } 
-
-//     complete();
-
-//     const allFilter = () => {
-//         //i kinda got stuck here what kind of compare i need to do here 
-//         // let newDb = db; no need for this simple call whole database from heree
-//         render(db);
-//     }
+allFilterBtn.addEventListener("click", allFilterTask);
+activeFilterBtn .addEventListener("click", activeFilterTask);
+completedFilterBtn.addEventListener("click", completedFilterTask);
