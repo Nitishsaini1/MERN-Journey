@@ -10,7 +10,6 @@ console.log("run");
 
 function cityNameInput (){ 
     let userInput = cityInput.value.trim();
-
     if (userInput ==="") {
         warning.innerText = "Please enter the name"
     } else { 
@@ -21,12 +20,11 @@ function cityNameInput (){
                 return;
             }  
         }
-         let url = 'https://api.openweathermap.org/data/2.5/weather?q='+userInput+'&appid=3e02a9ecde5bba9c92576cd374488488&units=metric';
+         let url = `https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=3e02a9ecde5bba9c92576cd374488488&units=metric`;
          fetch(url)
          .then(function (response){
             return response.json();
-         }
-        )
+         }  )
          .then(
             function (data) {
                 displayWeather(data);
@@ -35,14 +33,8 @@ function cityNameInput (){
          .catch(
          function (error) {
             console.log(error);
-            
-             warning.innerText = "The Weather cannot load right now !"
-            
-         }
-         
-
-         )
-
+            warning.innerText = "The Weather cannot load right now !"
+              } )
          cityInput.value="";
     warning.innerText = "";
     }

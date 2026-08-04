@@ -6,9 +6,10 @@ const completedFilterBtn = document.querySelector(".completed");
 const taskCounter = document.querySelector(".task-counter");
 const displayTaskList = document.querySelector(".task-list");
 const toast = document.querySelector(".toast");
-let database = [];
+let database;
+
 let editingId = -1;
-let nextId =1;
+let nextId = 1;
 let filter = "";
 const toastText = (message)=>{
     toast.innerText = message; 
@@ -23,37 +24,17 @@ const applyCurrentFilter =()=>{
      } else if (  filter === "complete") {
  completedFilterTask();
      } else {     
+        saveDatabase();
          renderTask(database);
      }
 
-}
-const addTask= ()=>{
-    let userInput = inputTask.value.trim();
-    if (userInput === "") { 
-        toastText("Please enter the input again");
-        return;
-    } else {        
-    let taskCard = {
-        id:nextId,
-        text:userInput,
-        completed:false
-    };
-    nextId++;
-        database.push(taskCard);
-         renderTask(database);
-         
-        }
-        // userInput = "" //why this not work but next line work  
-         inputTask.value = "";
 };
 const renderTask = (tasks) => {
      displayTaskList.innerHTML = "";
        let counter = 0;
         for (let i = 0; i < tasks.length; i++) {
             const element = tasks[i];  
-            let checkBox=""
-          
-             
+            let checkBox=""            
             if (element.completed === true) { 
                checkBox = "checked"
             } else { 
@@ -91,6 +72,26 @@ const renderTask = (tasks) => {
         } 
          taskCounter.textContent = counter;
 }; 
+const addTask= ()=>{
+    let userInput = inputTask.value.trim();
+    if (userInput === "") { 
+        toastText("Please enter the input again");
+        return;
+    } else {        
+    let taskCard = {
+        id:nextId,
+        text:userInput,
+        completed:false
+    };
+    nextId++;
+        database.push(taskCard);
+        saveDatabase();
+         renderTask(database);
+         
+        }
+        // userInput = "" //why this not work but next line work  
+         inputTask.value = "";
+};
 const toggleTask = (id) => { 
      let task = database.find((index)=> index.id === id);
      task.completed = !task.completed;
@@ -98,7 +99,7 @@ const toggleTask = (id) => {
    
 };
 const deleteTask = (id) => {
-    let deleteIndex = database.findIndex((task)=> task.id === id);
+    let deleteIndex = database.findIndex((task)=> task.id === id);  
     if(deleteIndex === -1 ){
          toastText("The task did not find");
         }else{
@@ -124,33 +125,47 @@ const saveTask = (id) => {
      task.text = editInput.value;
     }
     editingId =-1;
+    saveDatabase();
      renderTask(database);
 };
-
 const allFilterTask = ( ) => {
     // let allFilter = database.filter()
     filter = "";
     renderTask(database); //here simply let render do its work and let show according to database every tasks
-}
+};
 const activeFilterTask = ( ) => {
     let pendingTasks = database.filter((tasks) => tasks.completed === false
     )
     filter = "active";
     renderTask(pendingTasks);
-}
+};
 const completedFilterTask = () => {
       let completeTasks = database.filter((tasks) => tasks.completed === true
     )
      filter = "complete";
     renderTask(completeTasks);
-}
+};
+const saveDatabase =() =>{
+    localStorage.setItem("task",JSON.stringify(database))
+};
 
+const loadDatabase = () => {
+    let temp = JSON.parse(localStorage.getItem("task"));
+    if (temp === null){
+        
+        database = [];
+    } else{
+
+        database = temp;
+    }   
+}; 
+
+
+loadDatabase(); 
 addTaskBtn.addEventListener("click", addTask);
 allFilterBtn.addEventListener("click", allFilterTask)
 activeFilterBtn .addEventListener("click", activeFilterTask)
 completedFilterBtn.addEventListener("click", completedFilterTask)
-
-
 // let db = [
 //     {name:true},
 //     {name:false},
