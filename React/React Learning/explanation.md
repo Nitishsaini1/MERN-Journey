@@ -1,0 +1,2 @@
+so to explain why i need a map() is simple I first need to show every user card on screen and for that i need something who give back the value i need but for loop cant return itself so i need a method who can give back every value and thats where the map came into picture thats why i had the map() to render the list of the UserCard components 
+the reason why does each card need a key is it need remember the unique identity to each card so that it can render
