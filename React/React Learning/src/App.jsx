@@ -1,5 +1,5 @@
 // import {useState} from 'react';
-// import "./App.css";
+
 // function Header() {
 //   return <h1 className="center">My website</h1>;
 // }
@@ -88,53 +88,62 @@
 //   );
 // }
 // export default App;
-
+import "./App.css";
 import { useState } from "react";
 
   let nextId = 1;
 
-console.log("nextId outside:", nextId);
 function Todo() {
 
-  console.log("Todo render, nextId:", nextId);
   const [text, setText] = useState("");
   const [todos, setTodos] = useState([]);
   
-  function addTodo(){
-
-  console.log("ADD CLICK — nextId before:", nextId);
+  function addTodo(){ 
     const newTodos = {
+      completed:false,
     id: nextId,
-    text: text,
-  };
+    text: text
+    };
  setTodos([...todos, newTodos]);
  nextId=nextId+1;
- 
-  console.log("ADD CLICK — nextId after:", nextId);
-  console.log(newTodos);
-  console.log(todos);
-}
-console.log(todos);
+ setText("");
   
-  return (
-    <>
-      <input
+} 
+
+     
+return (
+    <> 
+    <input
         type="text"
-        placeholder="Enter a todo"
+        placeholder="Enter the todo"
+        value={text}
+        
         onChange={(e) => setText(e.target.value)}
       />
-      <button onClick={addTodo}>Add Todo</button>
-    
-       
+      <button onClick={addTodo}>Add Todo</button> 
       <div>
-        { todos.map((todo) => { 
-           
-          return  <p key={todo.id}> {todo.text} </p>
-      
-        })
-      
-        }
-      </div>
+        { todos.map((todo) => {            
+          return  ( 
+            <div className="flex"  key={todo.id}>
+            <input  
+            type="checkbox" 
+            checked={todo.completed}
+            onChange={(e)=> {
+              setTodos(
+                todos.map((currentTodo) =>
+                currentTodo.id === todo.id 
+                ? {...currentTodo , completed:e.target.checked}   
+                : currentTodo
+                 ) 
+                );
+            }}
+            />
+            <p> {todo.text} </p>
+            </div>
+             
+        )
+        })} 
+      </div> 
     </>
   ); 
 } 
@@ -148,3 +157,4 @@ function App() {
 }
 
 export default App;
+ 

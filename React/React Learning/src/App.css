@@ -199,3 +199,6 @@
   padding:10px;
   /* border:1px solid grey;  */
 }
+.flex{
+  display:flex;
+}
