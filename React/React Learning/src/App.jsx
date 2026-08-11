@@ -139,6 +139,16 @@ return (
             }}
             />
             <p> {todo.text} </p>
+      
+        <button onClick = {() => {
+               
+                const newTodo = todos.filter((currentTodo) => {
+                  return (todo.id !== currentTodo.id)
+                })
+                setTodos(newTodo);
+
+            } }>Delete</button>
+          
             </div>
              
         )
