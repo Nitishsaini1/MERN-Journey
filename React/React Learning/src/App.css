@@ -201,4 +201,14 @@
 }
 .flex{
   display:flex;
+  align-items:center;
+  gap:10px;
+}
+.strike-text{
+  text-decoration:line-through;
+}
+
+.button{
+  height:17px;
+  padding:0 10px;
 }
