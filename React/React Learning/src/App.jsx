@@ -204,44 +204,8 @@ function Todo(){
     {
       todos.map((todo)=>{
         return (
-          <div className="flex  " key={todo.id}>
-            <input type="checkbox" 
-            onClick={(e)=>{
-              return ( 
-            setTodos( todos.map((currentTodo)=>{
-                  return( 
-                  
-                      currentTodo.id === todo.id  ?  
-                      {...currentTodo, completed:e.target.checked}
-                      : currentTodo
-                 
-
-                  )
-                }
-            )
-          )
-              )
-            }}
-            />
-            <p  
-            style={
-              todo.completed
-              ? {textDecoration:"line-through"}
-              :{textDecoration:"none"}
-            }
-            
-            >{todo.text}</p>
-            <button className="button" 
-            onClick={()=>{
-              const newTodos=
-                todos.filter((currentTodo)=>{
-                return  currentTodo.id !== todo.id
-                })
-                setTodos(newTodos)
-              
-            }}
-            >Delete</button>
-          </div>
+         <TodoItem key={todo.id} todo={todo}/> 
+        
         )
         
       })
@@ -252,7 +216,9 @@ function Todo(){
 
 
 }
-
+function TodoItem(item){
+   return <p   >{item.todo.text}</p>
+}
 function App(){
   return (<>
   <Todo/>
@@ -260,3 +226,42 @@ function App(){
 }
 
 export default App;
+
+  // <div className="flex  " key={todo.id}>
+          //   <input type="checkbox" 
+          //   onClick={(e)=>{
+          //     return ( 
+          //   setTodos( todos.map((currentTodo)=>{
+          //         return( 
+                  
+          //             currentTodo.id === todo.id  ?  
+          //             {...currentTodo, completed:e.target.checked}
+          //             : currentTodo
+                 
+
+          //         )
+          //       }
+          //   )
+          // )
+          //     )
+          //   }}
+          //   />
+          //   <p  
+          //   style={
+          //     todo.completed
+          //     ? {textDecoration:"line-through"}
+          //     :{textDecoration:"none"}
+          //   }
+            
+          //   >{todo.text}</p>
+          //   <button className="button" 
+          //   onClick={()=>{
+          //     const newTodos=
+          //       todos.filter((currentTodo)=>{
+          //       return  currentTodo.id !== todo.id
+          //       })
+          //       setTodos(newTodos)
+              
+          //   }}
+          //   >Delete</button>
+          // </div>
