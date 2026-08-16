@@ -194,6 +194,18 @@ function Todo(){
     console.log(newTodos)
     setText("")
   }console.log(todos)
+    function handleToggle(id,checked){
+       setTodos( 
+          todos.map((currentTodo)=>{
+      const newTodo= []
+      return(
+        currentTodo.id===id? {...currentTodo, completed:checked} : currentTodo
+       
+      )
+    })
+       )
+  
+  }
   return (
     <>
     <input placeholder="Please Enter the todo" value={text} onChange={(e)=>{
@@ -201,11 +213,11 @@ function Todo(){
     }}></input>
     <button onClick={addTodo} >Add todo</button>
     <div>
-    {
+      {
       todos.map((todo)=>{
         return (
          <TodoItem key={todo.id} todo={todo}/> 
-        
+      
         )
         
       })
