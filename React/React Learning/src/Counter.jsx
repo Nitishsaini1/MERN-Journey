@@ -17,6 +17,14 @@ function Counter(){
                 setStep(rawValue)
             }
         }}
+        onKeyDown={(e)=>{
+            if(e.key=== "ArrowDown"){
+                console.log("Work")
+                setCounter(counter - step)
+            }else if(e.key === "ArrowUp"){
+                setCounter(counter + step)
+            }
+        }}
         />
         <button
         onClick={()=>{
