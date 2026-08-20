@@ -4,7 +4,15 @@ function Counter(){
     const [counter, setCounter] = useState(0);
     const [step, setStep] = useState(5)
     const [stepInput, setStepInput] = useState("5")
+
+    function increase(){
+        setCounter(counter + step)
+    }
+     function decrease(){
+        setCounter(counter - step)
+    }
     return(
+
         <>
         <h1>{counter}</h1>
         <input
@@ -26,22 +34,28 @@ function Counter(){
             }
         }}
         />
-        <button
-        onClick={()=>{
-            setCounter(counter + step)
-        }}
-        >Increase</button>
-        <button
-        onClick={()=>{
-            setCounter(counter - step)
-        }}
-        >Decrease</button>
+      
         <button onClick={()=>{
             setCounter(0)
         }}>Reset</button>
+        <Display 
+        counter={counter}
+        increase={increase}
+        decrease={decrease}
+        
+        />
         </>
     )
 
 }
 
+function Display(props){
+    return<>
+    <h1>{props.counter}</h1>
+      <button onClick={ props.increase}>Increase</button>
+
+        <button onClick={ props.decrease}>decrease</button>
+        
+    </>
+}
 export default Counter
