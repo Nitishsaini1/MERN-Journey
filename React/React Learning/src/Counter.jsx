@@ -4,6 +4,7 @@ function Counter(){
     const [counter, setCounter] = useState(0);
     const [step, setStep] = useState(5)
     const [stepInput, setStepInput] = useState("5")
+    const [hasError, setHasError] = useState(false)
 
     function increase(){
         setCounter(counter + step)
@@ -21,9 +22,17 @@ function Counter(){
         onChange={(e)=>{
             setStepInput(e.target.value)
             const rawValue = Number(e.target.value)
-            if(rawValue > 0){
+            if(rawValue>0){
                 setStep(rawValue)
+                setHasError(false)
+                
+                //dont show error
+            }else{
+                setHasError(true)
+                //show error I'm leaving these bcuz i dont know how will they render as what variable work for this
             }
+            console.log(hasError)
+            
         }}
         onKeyDown={(e)=>{
             if(e.key=== "ArrowDown"){
@@ -34,6 +43,8 @@ function Counter(){
             }
         }}
         />
+        {hasError && <p>Step must be greater than 0</p>}
+       
       
         <button onClick={()=>{
             setCounter(0)
