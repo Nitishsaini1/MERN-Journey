@@ -173,7 +173,6 @@
  
 
 
-
 import "./App.css";
 import { useState } from "react";
 
@@ -212,15 +211,15 @@ function Todo(){
     }}></input>
     <button onClick={addTodo} >Add todo</button>
     <div>
-      {
-      todos.map((todo)=>{
-        return (
-         <TodoItem key={todo.id} todo={todo} handleToggle /> 
-      
-        )
+
+      { todos.map((todo)=>{
+        return ( <TodoItem key={todo.id} todo={todo}  handleToggle={handleToggle} />  )
         
       })
-    }    </div>
+    }    
+    </div>
+   
+     
     </>
       )
  
@@ -228,51 +227,28 @@ function Todo(){
 
 }
 function TodoItem(item){
-   return <p   >{item.todo.text}</p>
+   return (
+     <>  
+     <div className="flex">
+   <input type="checkbox"/>
+   <p   >{item.todo.text}</p>
+     </div>
+
+   </>
+    )
+
+}
+function handleToggle(item){
+  return(
+    <>
+    
+    </>
+  )
 }
 function App(){
   return (<>
-  <Todo/>
+  <Todo/> 
   </>)
 }
 
 export default App;
-
-  // <div className="flex  " key={todo.id}>
-          //   <input type="checkbox" 
-          //   onClick={(e)=>{
-          //     return ( 
-          //   setTodos( todos.map((currentTodo)=>{
-          //         return( 
-                  
-          //             currentTodo.id === todo.id  ?  
-          //             {...currentTodo, completed:e.target.checked}
-          //             : currentTodo
-                 
-
-          //         )
-          //       }
-          //   )
-          // )
-          //     )
-          //   }}
-          //   />
-          //   <p  
-          //   style={
-          //     todo.completed
-          //     ? {textDecoration:"line-through"}
-          //     :{textDecoration:"none"}
-          //   }
-            
-          //   >{todo.text}</p>
-          //   <button className="button" 
-          //   onClick={()=>{
-          //     const newTodos=
-          //       todos.filter((currentTodo)=>{
-          //       return  currentTodo.id !== todo.id
-          //       })
-          //       setTodos(newTodos)
-              
-          //   }}
-          //   >Delete</button>
-          // </div>
