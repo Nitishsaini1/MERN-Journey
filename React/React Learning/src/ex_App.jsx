@@ -176,79 +176,84 @@
 import "./App.css";
 import { useState } from "react";
 
-let nextId= 1;
+function App(){
+  return 
+  <> 
+    <div className="card">Hello</div>
+  </>
+}
 
-function Todo(){
-  const [todos, setTodos] = useState([]);
-  const [text, setText] = useState("");
-  function addTodo(){
-    const newTodos={
-      id:nextId,
-      completed:false,
-      text:text
-    }
-    nextId = nextId+1;
-    setTodos([...todos, newTodos])
-    console.log(nextId)
-    console.log(newTodos)
-    setText("")
-  }console.log(todos)
-    function handleToggle(id,checked){
-       setTodos( 
-          todos.map((currentTodo)=>{  
-          return(
-        currentTodo.id===id? {...currentTodo, completed:checked} : currentTodo
+// let nextId= 1;
+
+// function Todo(){
+//   const [todos, setTodos] = useState([]);
+//   const [text, setText] = useState("");
+//   function addTodo(){
+//     const newTodos={
+//       id:nextId,
+//       completed:false,
+//       text:text
+//     }
+//     nextId = nextId+1;
+//     setTodos([...todos, newTodos])
+//     console.log(nextId)
+//     console.log(newTodos)
+//     setText("")
+//   }console.log(todos)
+//     function handleToggle(id,checked){
+//        setTodos( 
+//           todos.map((currentTodo)=>{  
+//           return(
+//         currentTodo.id===id? {...currentTodo, completed:checked} : currentTodo
        
-      )
-    })
-       )
-  
-  }
-  return (
-    <>
-    <input placeholder="Please Enter the todo" value={text} onChange={(e)=>{
-      setText(e.target.value)
-    }}></input>
-    <button onClick={addTodo} >Add todo</button>
-    <div>
+//       )
+//     })
+//        )
+//   }
+//   return (
+//     <>
+//     <input placeholder="Please Enter the todo" value={text} onChange={(e)=>{
+//       setText(e.target.value)
+//     }}></input>
+//     <button onClick={addTodo} >Add todo</button>
+//     <div>
 
-      { todos.map((todo)=>{
-        return ( <TodoItem key={todo.id} todo={todo}  handleToggle={handleToggle} />  )
-        
-      })
-    }    
-    </div>
+//       { todos.map((todo)=>{
+//         return ( <TodoItem key={todo.id} todo={todo}  handleToggle={handleToggle} />  )
+//       })
+//     }    
+//     </div>
    
      
-    </>
-      )
+//     </>
+//       )
  
 
 
-}
-function TodoItem(item){
-   return (
-     <>  
-     <div className="flex">
-   <input type="checkbox"/>
-   <p   >{item.todo.text}</p>
-     </div>
+// }
+// function TodoItem(item){
+//    return (
+//      <>  
+//      <div className="flex">
+//    <input type="checkbox"/>
+//    <p   >{item.todo.text}</p>
+//      </div>
 
-   </>
-    )
+//    </>
+//     )
 
-}
-function handleToggle(item){
-  return(
-    <>
+// }
+// function handleToggle(item){
+//   return(
+//     <>
     
-    </>
-  )
-}
-function App(){
-  return (<>
-  <Todo/> 
-  </>)
-}
+//     </>
+//   )
+// }
+// function App(){
+//   return (<>
+//   <Todo/> 
+//   </>)
+// }
 
 export default App;

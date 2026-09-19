@@ -19,7 +19,7 @@ const toastText = (message)=>{
 }; 
 
 
-const applyCurrentFilter = () => {
+const applyCurrentFilter = () => {   
     if (filter === "active") {
         activeFilterTask();
     } else if (filter === "complete") {
@@ -82,6 +82,7 @@ const renderTask = (tasks) => {
             
         } 
          taskCounter.textContent = counter;
+         
 }; 
 const addTask= ()=>{
     let userInput = inputTask.value.trim();
@@ -146,7 +147,6 @@ const saveTask = (id) => {
     applyCurrentFilter();
     //  renderTask(database);
 };
-
 const allFilterTask = ( ) => { 
     filter = "";
     applyCurrentFilter();
